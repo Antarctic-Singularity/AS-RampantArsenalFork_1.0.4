@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 2024.08.20
+  Improvements:
+    - Added compatibility with "Mech armor" mod
+  Tweaks:
+    - Shotgun and canon projectiles now can hit asteroids (thanks  Lenny1297 and DeathByError)
+    - Slightly increased fire resistance for shotgun turret
+    - Medic tower: Healing cloud 1 and 2 tiers have been enhanced (20 -> 40, 60 -> 200)
+      Increased magazine size for tier 2 healing capsule
+    - Advanced Flamethrower Turret: Crude oil damage now 50% (lowered from 90%). Napalm damage now 300% (150% before)
+    - Fixed light artillery cost from 300 to 30 steel
+    - Rebalanced "cluster grenade capsule" to reduce lags
+  Bugfixes:
+    - RA Tanks and cars now can be remote drived. Also, worms don't ignore them
+    - Fixed duplicate recipes in factoriopedia
+    - Medic Turret: Fixed a bug where the tier 1 Medic Turret cloud was healing like a tier 2 cloud (60 per sec instead of 20 per sec)
+---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+Date: 2024.06.14
+  Tweaks:
+    - Shotgun turret now cost lesser steel and more iron gears
+  Bugfixes:
+    - Fixed error if "Bob-warfare" mod installed
+  Compatibility:
+    - Additional walls now immune to bob-plasma
+  Other:
+    - Removed setting "Enable Infinite Technologies"
+---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 2024.03.23
+  Improvements:
+    - Added new armor: combat mech armor
+  Tweaks:
+    - Doubled fuel efficiency for Vehicle Portable Nuclear Reactor
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 2024.03.09
+  Improvements:
+    - Added new walls, with increased protection against one type of damage
+    - Added stronger repair capsules for the Medic Tower
+  Tweaks:
+    - Mending walls: poison resistance now 5/95% (was 30%)	
+    - Сannon turret range increased from 24 to 28
+  Compatibility:
+    - Light Artillery "next_upgrade" attribute set to Nil, to resolve the issue with artillery turret mods
+  Bugfixes:
+    - Added missing en, ru localisations
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2024.02.24
+  Compatibility:
+    - Ported Rampant Aredenal 1.1.6 to Factorio 2.0. Added Space Age compatibility
+  Tweaks:
+    - Some balance changes to aviod balance breaking with SA
