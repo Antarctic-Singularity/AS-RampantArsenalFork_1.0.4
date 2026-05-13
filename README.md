@@ -9,10 +9,10 @@ This is a **community fork** of the abandoned [Rampant Arsenal](https://mods.fac
 ### Original Author
 - **Arch666Angel** - Original Rampant Arsenal mod creator
 
-### Current Fork Maintainer
+### The og Fork Maintainer
 - **Dimm2101** - Active fork maintenance
 
-## Changes in This Fork
+## Changes in This Fork Fork
 
 ### Factorio 2.0 Port
 - Full compatibility update for Factorio 2.0
@@ -70,4 +70,4 @@ See LICENSE file for full details.
 Special thanks to:
 - **Arch666Angel** for the original Rampant Arsenal concept and balance work
 - **veden** for the original mod code structure
-- Factorio modding community for continued support and feedback
+- **Dimm2101** for fork
