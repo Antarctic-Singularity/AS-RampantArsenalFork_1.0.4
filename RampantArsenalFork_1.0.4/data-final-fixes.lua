@@ -102,7 +102,7 @@ end
 
 -- Light Artillery Shells: Optional support for light artillery mod
 -- Only load if Rampant Arsenal ammo types are enabled
-if data.raw["ammo"]["incendiary-artillery"] then
+if data.raw["ammo"]["incendiary-artillery-ammo-rampant-arsenal"] then
     if mods["snip-light-artillery"] then
         -- Add light versions with Light Artillery tech unlock
         require("prototypes/light-artillery-shells")

@@ -4,7 +4,7 @@
 -- AOE: Same as original
 
 -- Only load if Rampant Arsenal ammo is available
-if not data.raw["ammo"]["incendiary-artillery"] then
+if not data.raw["ammo"]["incendiary-artillery-ammo-rampant-arsenal"] then
     return
 end
 
@@ -16,7 +16,7 @@ local function scaleDamage(originalDamage)
 end
 
 -- Incendiary Light Shell
-local incendiaryLightShell = table.deepcopy(data.raw["ammo"]["incendiary-artillery"])
+local incendiaryLightShell = table.deepcopy(data.raw["ammo"]["incendiary-artillery-ammo-rampant-arsenal"])
 incendiaryLightShell.name = "light-incendiary-artillery"
 incendiaryLightShell.icon = "__RampantArsenalFork__/graphics/icons/light-incendiary-artillery-shell.png"
 
@@ -45,7 +45,7 @@ end
 incendiaryLightShell.ammo_type.action.action_delivery.projectile = "light-incendiary"
 
 -- Light Incendiary Recipe
-local incendiaryLightRecipe = table.deepcopy(data.raw["recipe"]["incendiary-artillery"])
+local incendiaryLightRecipe = table.deepcopy(data.raw["recipe"]["incendiary-artillery-ammo-rampant-arsenal"])
 incendiaryLightRecipe.name = "light-incendiary-artillery"
 incendiaryLightRecipe.enabled = false
 incendiaryLightRecipe.results = {{type="item", name="light-incendiary-artillery", amount=1}}
@@ -59,7 +59,7 @@ incendiaryLightRecipe.category = "advanced-crafting"
 incendiaryLightRecipe.order = "d[explosive-cannon-shell]-d[light-incendiary]"
 
 -- HE Light Shell
-local heLightShell = table.deepcopy(data.raw["ammo"]["he-artillery"])
+local heLightShell = table.deepcopy(data.raw["ammo"]["he-artillery-ammo-rampant-arsenal"])
 heLightShell.name = "light-he-artillery"
 heLightShell.icon = "__RampantArsenalFork__/graphics/icons/light-he-artillery-shell.png"
 
@@ -85,7 +85,7 @@ end
 heLightShell.ammo_type.action.action_delivery.projectile = "light-he"
 
 -- Light HE Recipe
-local heLightRecipe = table.deepcopy(data.raw["recipe"]["he-artillery"])
+local heLightRecipe = table.deepcopy(data.raw["recipe"]["he-artillery-ammo-rampant-arsenal"])
 heLightRecipe.name = "light-he-artillery"
 heLightRecipe.enabled = false
 heLightRecipe.results = {{type="item", name="light-he-artillery", amount=1}}
@@ -99,7 +99,7 @@ heLightRecipe.category = "advanced-crafting"
 heLightRecipe.order = "d[explosive-cannon-shell]-d[light-he]"
 
 -- Bio Light Shell
-local bioLightShell = table.deepcopy(data.raw["ammo"]["bio-artillery"])
+local bioLightShell = table.deepcopy(data.raw["ammo"]["bio-artillery-ammo-rampant-arsenal"])
 bioLightShell.name = "light-bio-artillery"
 bioLightShell.icon = "__RampantArsenalFork__/graphics/icons/light-bio-artillery-shell.png"
 
@@ -125,7 +125,7 @@ end
 bioLightShell.ammo_type.action.action_delivery.projectile = "light-bio"
 
 -- Light Bio Recipe
-local bioLightRecipe = table.deepcopy(data.raw["recipe"]["bio-artillery"])
+local bioLightRecipe = table.deepcopy(data.raw["recipe"]["bio-artillery-ammo-rampant-arsenal"])
 bioLightRecipe.name = "light-bio-artillery"
 bioLightRecipe.enabled = false
 bioLightRecipe.results = {{type="item", name="light-bio-artillery", amount=1}}
