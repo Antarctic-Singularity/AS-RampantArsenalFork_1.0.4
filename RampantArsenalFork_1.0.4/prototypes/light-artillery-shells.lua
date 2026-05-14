@@ -47,6 +47,7 @@ incendiaryLightShell.ammo_type.action.action_delivery.projectile = "light-incend
 -- Light Incendiary Recipe
 local incendiaryLightRecipe = table.deepcopy(data.raw["recipe"]["incendiary-artillery"])
 incendiaryLightRecipe.name = "light-incendiary-artillery"
+incendiaryLightRecipe.enabled = false
 incendiaryLightRecipe.results = {{type="item", name="light-incendiary-artillery", amount=1}}
 incendiaryLightRecipe.ingredients = {
     {type="item", name="steel-plate", amount=1},
@@ -86,6 +87,7 @@ heLightShell.ammo_type.action.action_delivery.projectile = "light-he"
 -- Light HE Recipe
 local heLightRecipe = table.deepcopy(data.raw["recipe"]["he-artillery"])
 heLightRecipe.name = "light-he-artillery"
+heLightRecipe.enabled = false
 heLightRecipe.results = {{type="item", name="light-he-artillery", amount=1}}
 heLightRecipe.ingredients = {
     {type="item", name="steel-plate", amount=1},
@@ -125,6 +127,7 @@ bioLightShell.ammo_type.action.action_delivery.projectile = "light-bio"
 -- Light Bio Recipe
 local bioLightRecipe = table.deepcopy(data.raw["recipe"]["bio-artillery"])
 bioLightRecipe.name = "light-bio-artillery"
+bioLightRecipe.enabled = false
 bioLightRecipe.results = {{type="item", name="light-bio-artillery", amount=1}}
 bioLightRecipe.ingredients = {
     {type="item", name="steel-plate", amount=1},
