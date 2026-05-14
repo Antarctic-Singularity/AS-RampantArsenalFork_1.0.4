@@ -21,7 +21,7 @@ incendiaryLightShell.name = "light-incendiary-artillery"
 incendiaryLightShell.icon = "__RampantArsenalFork__/graphics/icons/light-incendiary-artillery-shell.png"
 
 -- Scale down the projectile damage
-local incendiaryLightProjectile = table.deepcopy(data.raw["artillery-projectile"]["incendiary"])
+local incendiaryLightProjectile = table.deepcopy(data.raw["artillery-projectile"]["incendiary-artillery-projectile-rampant-arsenal"])
 incendiaryLightProjectile.name = "light-incendiary"
 
 -- Modify damage in projectile effects
@@ -64,7 +64,7 @@ heLightShell.name = "light-he-artillery"
 heLightShell.icon = "__RampantArsenalFork__/graphics/icons/light-he-artillery-shell.png"
 
 -- Scale down HE projectile
-local heLightProjectile = table.deepcopy(data.raw["artillery-projectile"]["he"])
+local heLightProjectile = table.deepcopy(data.raw["artillery-projectile"]["he-artillery-projectile-rampant-arsenal"])
 heLightProjectile.name = "light-he"
 
 -- Modify HE damage
@@ -104,7 +104,7 @@ bioLightShell.name = "light-bio-artillery"
 bioLightShell.icon = "__RampantArsenalFork__/graphics/icons/light-bio-artillery-shell.png"
 
 -- Scale down Bio projectile
-local bioLightProjectile = table.deepcopy(data.raw["artillery-projectile"]["bio"])
+local bioLightProjectile = table.deepcopy(data.raw["artillery-projectile"]["bio-artillery-projectile-rampant-arsenal"])
 bioLightProjectile.name = "light-bio"
 
 -- Modify bio damage
