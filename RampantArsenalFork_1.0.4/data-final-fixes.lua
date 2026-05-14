@@ -101,45 +101,48 @@ if mods["space-age"] then
 end
 
 -- Light Artillery Shells: Optional support for light artillery mod
-if mods["snip-light-artillery"] then
-    -- Add light versions with Light Artillery tech unlock
-    require("prototypes/light-artillery-shells")
+-- Only load if Rampant Arsenal ammo types are enabled
+if data.raw["ammo"]["incendiary-artillery"] then
+    if mods["snip-light-artillery"] then
+        -- Add light versions with Light Artillery tech unlock
+        require("prototypes/light-artillery-shells")
 
-    -- Add recipe unlocks to Light Artillery technology
-    if data.raw["technology"]["snip-light-artillery"] then
-        table.insert(data.raw["technology"]["snip-light-artillery"].effects, {
-            type = "unlock-recipe",
-            recipe = "light-incendiary-artillery"
-        })
-        table.insert(data.raw["technology"]["snip-light-artillery"].effects, {
-            type = "unlock-recipe",
-            recipe = "light-he-artillery"
-        })
-        table.insert(data.raw["technology"]["snip-light-artillery"].effects, {
-            type = "unlock-recipe",
-            recipe = "light-bio-artillery"
-        })
-    end
-else
-    -- Add light versions with vanilla Artillery tech unlock
-    require("prototypes/light-artillery-shells")
+        -- Add recipe unlocks to Light Artillery technology
+        if data.raw["technology"]["snip-light-artillery"] then
+            table.insert(data.raw["technology"]["snip-light-artillery"].effects, {
+                type = "unlock-recipe",
+                recipe = "light-incendiary-artillery"
+            })
+            table.insert(data.raw["technology"]["snip-light-artillery"].effects, {
+                type = "unlock-recipe",
+                recipe = "light-he-artillery"
+            })
+            table.insert(data.raw["technology"]["snip-light-artillery"].effects, {
+                type = "unlock-recipe",
+                recipe = "light-bio-artillery"
+            })
+        end
+    else
+        -- Add light versions with vanilla Artillery tech unlock
+        require("prototypes/light-artillery-shells")
 
-    -- Check if Rampant Arsenal modified the vanilla artillery tech
-    local artilleryTech = data.raw["technology"]["artillery"] or
-                         (mods["RampantArsenalFork"] and data.raw["technology"]["lite-artillery"])
+        -- Check if Rampant Arsenal modified the vanilla artillery tech
+        local artilleryTech = data.raw["technology"]["artillery"] or
+                             (mods["RampantArsenalFork"] and data.raw["technology"]["lite-artillery"])
 
-    if artilleryTech then
-        table.insert(artilleryTech.effects, {
-            type = "unlock-recipe",
-            recipe = "light-incendiary-artillery"
-        })
-        table.insert(artilleryTech.effects, {
-            type = "unlock-recipe",
-            recipe = "light-he-artillery"
-        })
-        table.insert(artilleryTech.effects, {
-            type = "unlock-recipe",
-            recipe = "light-bio-artillery"
-        })
+        if artilleryTech then
+            table.insert(artilleryTech.effects, {
+                type = "unlock-recipe",
+                recipe = "light-incendiary-artillery"
+            })
+            table.insert(artilleryTech.effects, {
+                type = "unlock-recipe",
+                recipe = "light-he-artillery"
+            })
+            table.insert(artilleryTech.effects, {
+                type = "unlock-recipe",
+                recipe = "light-bio-artillery"
+            })
+        end
     end
 end

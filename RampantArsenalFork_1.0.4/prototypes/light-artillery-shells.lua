@@ -3,6 +3,11 @@
 -- Cost: 70% of original (30% cheaper)
 -- AOE: Same as original
 
+-- Only load if Rampant Arsenal ammo is available
+if not data.raw["ammo"]["incendiary-artillery"] then
+    return
+end
+
 local lightShells = {}
 
 -- Damage scaler function
