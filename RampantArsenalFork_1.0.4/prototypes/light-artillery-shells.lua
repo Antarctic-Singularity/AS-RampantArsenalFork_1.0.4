@@ -132,7 +132,7 @@ bioLightRecipe.results = {{type="item", name="light-bio-artillery", amount=1}}
 bioLightRecipe.ingredients = {
     {type="item", name="steel-plate", amount=1},
     {type="item", name="explosives", amount=1},
-    {type="item", name="toxic-capsule", amount=3}
+    {type="item", name="toxic-capsule-rampant-arsenal", amount=3}
 }
 bioLightRecipe.energy_required = 5
 bioLightRecipe.category = "advanced-crafting"
