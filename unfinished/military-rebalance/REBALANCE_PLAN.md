@@ -161,6 +161,7 @@ Special high-capacity magazines for minigun-style weapons to hold more ammunitio
 
 ### Drum Magazine Types
 - **Standard Drum Magazine**
+  - Stack Size: 1
   - Capacity: 50 rounds (vs magazine default of ~10)
   - Required for: Minigun, Laser minigun
   - Crafting: Plastic + Steel + Iron gears
@@ -168,6 +169,7 @@ Special high-capacity magazines for minigun-style weapons to hold more ammunitio
 
 - **Optional Support** (if Modular Turrets mod is installed)
   - Gatling turret drum magazine (150 round capacity)
+  - Stack Size: 1
   - Same crafting requirements, scaled to turret capacity
 
 ### Drum Magazine Mechanics
