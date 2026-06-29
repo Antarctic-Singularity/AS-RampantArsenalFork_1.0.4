@@ -218,8 +218,20 @@ data:extend({
               damage = {amount = 350, type = "explosion"}
             },
             {
+              type = "damage",
+              damage = {amount = 25, type = "fire"},
+              apply_damage_to_trees = false
+            },
+            {
               type = "push-back",
               distance = 1
+            },
+            {
+              type = "create-fire",
+              entity_name = "fire-flame",
+              initial_ground_flame_count = 3,
+              check_buildability = true,
+              show_in_tooltip = true
             },
             {
               type = "create-entity",
