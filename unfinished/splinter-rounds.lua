@@ -86,8 +86,8 @@ makeRecipe({
   enabled = false,
   category = "crafting",
   ingredients = {
-    {type = "item", name = "copper-plate", amount = 5},
-    {type = "item", name = "iron-plate", amount = 1},
+    {type = "item", name = "uranium-238", amount = 1},
+    {type = "item", name = "copper-plate", amount = 3},
     {type = "item", name = "firearm-magazine", amount = 1}
   },
   result = splinterRoundsAmmo
