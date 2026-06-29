@@ -108,31 +108,34 @@ data:extend({
   }
 })
 
--- Laser Ammo Recipe
+-- Laser Ammo Recipe (endgame)
 makeRecipe({
   name = laserAmmo,
   icon = "__base__/graphics/icons/piercing-rounds-magazine.png",
   enabled = false,
   category = "crafting",
   ingredients = {
-    {type = "item", name = "copper-plate", amount = 2},
-    {type = "item", name = "iron-plate", amount = 1},
-    {type = "item", name = "electronic-circuit", amount = 1},
+    {type = "item", name = "copper-plate", amount = 5},
+    {type = "item", name = "steel-plate", amount = 2},
+    {type = "item", name = "processing-unit", amount = 1},
+    {type = "item", name = "electronic-circuit", amount = 2},
     {type = "item", name = "firearm-magazine", amount = 1}
   },
   result = laserAmmo
 })
 
--- Laser Gun Recipe
+-- Laser Gun Recipe (endgame)
 makeRecipe({
   name = laserGun,
   icon = "__base__/graphics/icons/assault-rifle.png",
   enabled = false,
   category = "crafting",
   ingredients = {
-    {type = "item", name = "iron-plate", amount = 5},
-    {type = "item", name = "copper-plate", amount = 5},
-    {type = "item", name = "electronic-circuit", amount = 3}
+    {type = "item", name = "steel-plate", amount = 10},
+    {type = "item", name = "copper-plate", amount = 10},
+    {type = "item", name = "processing-unit", amount = 3},
+    {type = "item", name = "electronic-circuit", amount = 5},
+    {type = "item", name = "engine-unit", amount = 2}
   },
   result = laserGun
 })
