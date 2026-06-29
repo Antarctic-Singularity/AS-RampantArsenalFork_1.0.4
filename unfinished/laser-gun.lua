@@ -133,8 +133,7 @@ makeRecipe({
   ingredients = {
     {type = "item", name = "steel-plate", amount = 10},
     {type = "item", name = "copper-plate", amount = 10},
-    {type = "item", name = "processing-unit", amount = 3},
-    {type = "item", name = "electronic-circuit", amount = 5},
+    {type = "item", name = "advanced-circuit", amount = 5},
     {type = "item", name = "engine-unit", amount = 2}
   },
   result = laserGun
