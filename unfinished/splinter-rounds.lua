@@ -79,15 +79,16 @@ local splinterRoundsAmmo = makeAmmo({
   }
 })
 
--- Splinter Rounds Recipe
+-- Splinter Rounds Recipe (more expensive than uranium rounds)
 makeRecipe({
   name = splinterRoundsAmmo,
   icon = "__RampantArsenalFork__/graphics/icons/piercing-rounds-magazine.png",
   enabled = false,
   category = "crafting",
   ingredients = {
-    {type = "item", name = "uranium-238", amount = 1},
-    {type = "item", name = "copper-plate", amount = 3},
+    {type = "item", name = "uranium-238", amount = 2},
+    {type = "item", name = "copper-plate", amount = 5},
+    {type = "item", name = "steel-plate", amount = 2},
     {type = "item", name = "firearm-magazine", amount = 1}
   },
   result = splinterRoundsAmmo
