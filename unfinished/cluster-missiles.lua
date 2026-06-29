@@ -181,6 +181,101 @@ data:extend({
         starting_frame_speed_deviation = 5
       }
     }
+  },
+
+  -- Super Cluster Rocket - Spawns 7 clusters of high-damage explosions
+  -- Per cluster: 350 explosion damage in 6.5 radius + push-back
+  -- Total: 2450 explosion damage spread across 7 locations
+  -- Based on HE grenade (550 damage) balanced for clustering
+  {
+    type = "projectile",
+    name = "super-cluster-rocket-rampant-arsenal",
+    flags = {"not-on-map"},
+    hidden = true,
+    acceleration = 0.005,
+    action = {
+      {
+        type = "direct",
+        action_delivery = {
+          type = "instant",
+          target_effects = {
+            {type = "create-entity", entity_name = "big-explosion"},
+            {type = "create-entity", entity_name = "small-scorchmark-tintable",
+             check_buildability = true}
+          }
+        }
+      },
+      {
+        type = "cluster",
+        cluster_count = 7,
+        distance = 4,
+        distance_deviation = 3,
+        action_delivery = {
+          type = "instant",
+          target_effects = {
+            {
+              type = "damage",
+              damage = {amount = 350, type = "explosion"}
+            },
+            {
+              type = "push-back",
+              distance = 1
+            },
+            {
+              type = "create-entity",
+              entity_name = "medium-explosion"
+            }
+          }
+        }
+      }
+    },
+    animation = {
+      layers = {
+        util.sprite_load("__base__/graphics/entity/rocket/rocket", {
+          scale = 0.5,
+          repeat_count = 8,
+          frame_count = 1,
+          rotate_shift = true,
+          priority = "high"
+        }),
+        util.sprite_load("__base__/graphics/entity/rocket/rocket-tinted-tip", {
+          scale = 0.5,
+          repeat_count = 8,
+          frame_count = 1,
+          rotate_shift = true,
+          priority = "high",
+          tint = {r = 0.2, g = 0.2, b = 1}
+        }),
+        util.sprite_load("__base__/graphics/entity/rocket/rocket-lights", {
+          blend_mode = "additive",
+          draw_as_glow = true,
+          scale = 0.5,
+          frame_count = 8,
+          rotate_shift = true,
+          priority = "high",
+        }),
+      }
+    },
+    shadow = util.sprite_load("__base__/graphics/entity/rocket/rocket", {
+      draw_as_shadow = true,
+      scale = 0.5,
+      frame_count = 1,
+      rotate_shift = true,
+      priority = "high"
+    }),
+    smoke = {
+      {
+        name = "smoke-fast",
+        deviation = {0.15, 0.15},
+        frequency = 1,
+        position = {0, 1},
+        slow_down_factor = 1,
+        starting_frame = 3,
+        starting_frame_deviation = 5,
+        starting_frame_speed = 0,
+        starting_frame_speed_deviation = 5
+      }
+    }
   }
 })
 
@@ -219,6 +314,24 @@ data:extend({
     },
     results = {{type = "item", name = "incendiary-cluster-missile-rampant-arsenal", amount = 1}},
     energy_required = 8
+  }
+})
+
+-- Super Cluster Rocket Recipe (very expensive, based on HE grenade damage)
+data:extend({
+  {
+    type = "recipe",
+    name = "super-cluster-rocket-rampant-arsenal",
+    category = "crafting",
+    enabled = false,
+    ingredients = {
+      {type = "item", name = "explosive-rocket", amount = 2},
+      {type = "item", name = "steel-plate", amount = 5},
+      {type = "item", name = "explosives", amount = 15},
+      {type = "item", name = "processing-unit", amount = 2}
+    },
+    results = {{type = "item", name = "super-cluster-rocket-rampant-arsenal", amount = 1}},
+    energy_required = 10
   }
 })
 
@@ -289,5 +402,38 @@ data:extend({
     },
     stack_size = 200,
     order = "d[rocket-launcher]-c[cluster-incendiary]"
+  },
+  {
+    type = "ammo",
+    name = "super-cluster-rocket-rampant-arsenal",
+    icon = "__RampantArsenalFork__/graphics/icons/he-rocket.png",
+    ammo_category = "rocket",
+    ammo_type = {
+      category = "rocket",
+      action = {
+        {
+          type = "direct",
+          action_delivery = {
+            type = "instant",
+            source_effects = {
+              {
+                type = "create-explosion",
+                entity_name = "explosion-gunshot"
+              }
+            }
+          }
+        },
+        {
+          type = "direct",
+          action_delivery = {
+            type = "projectile",
+            starting_speed = 0.1,
+            projectile = "super-cluster-rocket-rampant-arsenal"
+          }
+        }
+      }
+    },
+    stack_size = 100,
+    order = "d[rocket-launcher]-c[super-cluster]"
   }
 })
