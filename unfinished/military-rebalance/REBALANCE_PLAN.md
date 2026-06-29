@@ -154,6 +154,35 @@ All cases require:
   - Rocket case: 5 plastic + 2 iron plate → rocket case (empty)
   - Filled at workbench or by hand
 
+## Drum Magazine System
+
+### Concept
+Special high-capacity magazines for minigun-style weapons to hold more ammunition per magazine.
+
+### Drum Magazine Types
+- **Standard Drum Magazine**
+  - Capacity: 50 rounds (vs magazine default of ~10)
+  - Required for: Minigun, Laser minigun
+  - Crafting: Plastic + Steel + Iron gears
+  - Purpose: High-capacity ammo storage for sustained fire
+
+- **Optional Support** (if Modular Turrets mod is installed)
+  - Gatling turret drum magazine (150 round capacity)
+  - Same crafting requirements, scaled to turret capacity
+
+### Drum Magazine Mechanics
+- Drum magazines are single-use items (like cases)
+- Required to use miniguns/gatling turrets effectively
+- Creates ongoing crafting requirement for late-game
+- Balances high fire rate with ammo consumption
+
+### Crafting Recipe Example
+Standard drum magazine:
+- 10 plastic
+- 5 steel plate
+- 2 iron gear
+→ 1 drum magazine (empty)
+
 ## Rationale
 - Reduces late-game ammo spam and inventory bloat
 - Creates more meaningful logistics and supply chain decisions
@@ -192,4 +221,10 @@ All cases require:
 - [ ] Case crafting recipes
 - [ ] Case filling/loading mechanics
 - [ ] Integration with turrets/guns
+- [ ] Drum magazine system design
+  - [ ] Standard drum magazine (50 round capacity)
+  - [ ] Gatling turret drum magazine (150 round capacity - optional)
+- [ ] Drum magazine crafting recipes
+- [ ] Minigun/laser minigun integration with drums
+- [ ] Optional modular turrets gatling support
 - [ ] Testing and balance validation
