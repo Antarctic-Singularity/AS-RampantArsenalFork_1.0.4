@@ -18,15 +18,27 @@ All bullet-based ammunition types (including new variants)
   - Laser ammo
 
 ### Rockets
-All rocket-based ammunition
+Standard rocket-based ammunition
 - **New Stack Size:** 10
 - **Current Stack Size:** 200 (current Rampant Arsenal)
 - **Affected Items:**
   - Incendiary rockets
   - HE rockets
   - Bio rockets
+
+### Cluster Missiles
+Special cluster rocket ammunition
+- **New Stack Size:** 5 (regular and incendiary)
+- **Current Stack Size:** 200 (current Rampant Arsenal)
+- **Affected Items:**
   - Cluster missiles
   - Incendiary cluster missiles
+
+### Super Cluster Rocket
+High-end cluster rocket ammunition
+- **New Stack Size:** 2
+- **Current Stack Size:** 100 (new items)
+- **Affected Items:**
   - Super cluster rockets
 
 ### Grenades
@@ -153,6 +165,8 @@ All cases require:
 ## Implementation Status
 - [ ] Bullet type ammo stack sizes (20)
 - [ ] Rocket stack sizes (10)
+- [ ] Cluster missile stack sizes (5)
+- [ ] Super cluster rocket stack sizes (2)
 - [ ] Grenade stack sizes (10)
 - [ ] Capsule stack sizes (10)
 - [ ] Grenade launcher ammo stack sizes (5)
