@@ -1,3 +1,48 @@
+-- Custom short-lived fire for super cluster rocket
+-- Shorter lifetime than standard fire-flame (300 ticks = 5 seconds)
+data:extend({
+  {
+    type = "fire",
+    name = "super-cluster-fire-rampant-arsenal",
+    localised_name = {"", "Super cluster fire"},
+    flags = {"placeable-off-grid", "not-on-map"},
+    damage_per_tick = {amount = 0.5, type = "fire"},
+    maximum_damage_to_tiles = 0.5,
+    spread_delay = 8,
+    spread_delay_deviation = 5,
+    lifetime = 300,
+    damage_multiplier_tick_rate = 60,
+    on_fuel_depleted_damage_multiplier = 0,
+    sound = {
+      filename = "__base__/sound/burning.ogg",
+      volume = 0.5
+    },
+    animation = {
+      filename = "__base__/graphics/entity/fire/fire-13-13.png",
+      priority = "high",
+      width = 13,
+      height = 13,
+      frame_count = 8,
+      line_length = 4,
+      animation_speed = 0.3
+    },
+    smoke = {
+      {
+        name = "fire-smoke",
+        deviation = {0.5, 0.5},
+        frequency = 2,
+        position = {0, 0},
+        starting_frame = 0,
+        starting_frame_deviation = 10,
+        starting_frame_speed = 1,
+        starting_frame_speed_deviation = 5,
+        speed_from_center = 0.1,
+        speed_from_center_deviation = 0.05
+      }
+    }
+  }
+})
+
 -- Cluster Missile - Spawns 7 grenades on detonation
 -- Per grenade: 35 explosion damage in 6.5 radius
 -- Total: 245 explosion damage spread across 7 locations
@@ -228,7 +273,7 @@ data:extend({
             },
             {
               type = "create-fire",
-              entity_name = "fire-flame",
+              entity_name = "super-cluster-fire-rampant-arsenal",
               initial_ground_flame_count = 3,
               check_buildability = true,
               show_in_tooltip = true
