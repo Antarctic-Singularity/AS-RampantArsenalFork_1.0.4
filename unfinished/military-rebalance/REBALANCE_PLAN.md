@@ -106,12 +106,49 @@ Flamethrower fuel/ammunition
 - **Affected Items:**
   - All flamethrower ammo variants
 
+## Magazine/Case System
+
+### Rocket Cases
+Magazine-style containers for rockets
+- **Purpose:** Hold multiple rockets in a single item stack slot
+- **Case Types:**
+  - Standard rocket case (holds 5 rockets)
+  - Incendiary rocket case (holds 5 rockets)
+  - HE rocket case (holds 5 rockets)
+  - Bio rocket case (holds 5 rockets)
+  - Cluster missile case (holds 3)
+  - Incendiary cluster case (holds 3)
+  - Super cluster case (holds 2)
+- **Crafting Requirements:** Plastic + Iron/Steel
+- **Mechanics:** Cases are consumed when used (like magazines), need to be crafted fresh
+
+### Cannon Cases
+Magazine-style containers for cannon shells
+- **Purpose:** Hold multiple cannon shells in a single item stack slot
+- **Case Types:**
+  - Standard cannon case (holds 10 shells)
+  - Explosive cannon case (holds 10 shells)
+  - Uranium cannon case (holds 10 shells)
+  - Explosive uranium case (holds 10 shells)
+- **Crafting Requirements:** Plastic + Iron/Steel
+- **Mechanics:** Cases are consumed when used, need constant supply
+
+### Case Crafting
+All cases require:
+- **Primary material:** Plastic or Low-Density Structure
+- **Secondary material:** Iron/Steel plates
+- **Result:** Reduces ammo spam, creates meaningful supply chain
+- **Example Recipe:**
+  - Rocket case: 5 plastic + 2 iron plate → rocket case (empty)
+  - Filled at workbench or by hand
+
 ## Rationale
 - Reduces late-game ammo spam and inventory bloat
 - Creates more meaningful logistics and supply chain decisions
 - Makes ammunition weight/storage more impactful
 - Encourages player to plan ammo production and supply
 - Maintains balance between different weapon types
+- Cases create intermediate crafting step for late-game gameplay
 
 ## Implementation Status
 - [ ] Bullet type ammo stack sizes (20)
@@ -126,4 +163,19 @@ Flamethrower fuel/ammunition
 - [ ] Landmines stack sizes (20)
 - [ ] Turret capsules stack sizes (10)
 - [ ] Flamethrower ammo stack sizes (10)
+- [ ] Rocket case system design
+  - [ ] Standard rocket cases
+  - [ ] Incendiary rocket cases
+  - [ ] HE rocket cases
+  - [ ] Bio rocket cases
+  - [ ] Cluster missile cases
+  - [ ] Super cluster missile cases
+- [ ] Cannon case system design
+  - [ ] Standard cannon cases
+  - [ ] Explosive cannon cases
+  - [ ] Uranium cannon cases
+  - [ ] Explosive uranium cannon cases
+- [ ] Case crafting recipes
+- [ ] Case filling/loading mechanics
+- [ ] Integration with turrets/guns
 - [ ] Testing and balance validation
