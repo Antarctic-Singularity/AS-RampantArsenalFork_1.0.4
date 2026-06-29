@@ -132,9 +132,9 @@ makeRecipe({
   category = "crafting",
   ingredients = {
     {type = "item", name = "steel-plate", amount = 10},
-    {type = "item", name = "copper-plate", amount = 10},
+    {type = "item", name = "low-density-structure", amount = 5},
     {type = "item", name = "advanced-circuit", amount = 5},
-    {type = "item", name = "engine-unit", amount = 2}
+    {type = "item", name = "electric-engine-unit", amount = 1}
   },
   result = laserGun
 })
