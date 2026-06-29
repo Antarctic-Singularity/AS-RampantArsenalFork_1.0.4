@@ -186,6 +186,8 @@ data:extend({
 
 -- Recipes for cluster missiles
 -- Cluster Missile Recipe
+-- Based on explosive-rocket + cluster grenade
+-- More expensive than HE rocket (1 explosive-rocket + 1 steel + 6 explosives)
 data:extend({
   {
     type = "recipe",
@@ -193,16 +195,16 @@ data:extend({
     category = "crafting",
     enabled = false,
     ingredients = {
-      {type = "item", name = "grenade", amount = 7},
-      {type = "item", name = "steel-plate", amount = 5},
-      {type = "item", name = "electronic-circuit", amount = 3}
+      {type = "item", name = "explosive-rocket", amount = 1},
+      {type = "item", name = "steel-plate", amount = 2},
+      {type = "item", name = "explosives", amount = 8}
     },
     results = {{type = "item", name = "cluster-missile-rampant-arsenal", amount = 1}},
     energy_required = 5
   }
 })
 
--- Incendiary Cluster Missile Recipe (more expensive)
+-- Incendiary Cluster Missile Recipe (more expensive than both)
 data:extend({
   {
     type = "recipe",
@@ -211,8 +213,8 @@ data:extend({
     enabled = false,
     ingredients = {
       {type = "item", name = "cluster-missile-rampant-arsenal", amount = 1},
-      {type = "item", name = "steel-plate", amount = 8},
-      {type = "item", name = "electronic-circuit", amount = 5},
+      {type = "item", name = "steel-plate", amount = 3},
+      {type = "item", name = "explosives", amount = 4},
       {type = "fluid", name = "light-oil", amount = 60}
     },
     results = {{type = "item", name = "incendiary-cluster-missile-rampant-arsenal", amount = 1}},
