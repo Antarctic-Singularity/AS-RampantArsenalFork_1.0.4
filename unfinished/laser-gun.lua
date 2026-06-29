@@ -40,6 +40,35 @@ local laserGun = makeGun(
   }
 )
 
+-- Laser Minigun (high fire rate laser weapon)
+local laserMinigun = makeGun(
+  {
+    name = "laser-minigun",
+    icon = "__RampantArsenalFork__/graphics/icons/minigun.png",
+    iconSize = 64,
+    order = "d[laser-minigun]"
+  },
+  {
+    type = "projectile",
+    ammo_category = "laser-ammo",
+    cooldown = 3,
+    movement_slow_down_factor = 0.7,
+    damage_modifier = 1.2,
+    gun_center_shift = {
+      north = {0, 0},
+      east = {0.15625, 0},
+      south = {0, 0},
+      west = {-0.15625, 0}
+    },
+    gun_barrel_shift = {
+      north = {0, -0.40625},
+      east = {0.40625, 0},
+      south = {0, 0.40625},
+      west = {-0.40625, 0}
+    }
+  }
+)
+
 -- Laser Ammo (uses regular ammo sprite)
 local laserAmmo = makeAmmo({
   name = "laser-ammo",
@@ -139,6 +168,23 @@ makeRecipe({
   result = laserGun
 })
 
+-- Laser Minigun Recipe (very expensive endgame - based on laser gun)
+makeRecipe({
+  name = laserMinigun,
+  icon = "__RampantArsenalFork__/graphics/icons/minigun.png",
+  enabled = false,
+  category = "crafting",
+  ingredients = {
+    {type = "item", name = "laser-gun-rampant-arsenal", amount = 1},
+    {type = "item", name = "steel-plate", amount = 15},
+    {type = "item", name = "low-density-structure", amount = 10},
+    {type = "item", name = "advanced-circuit", amount = 10},
+    {type = "item", name = "processing-unit", amount = 3},
+    {type = "item", name = "electric-engine-unit", amount = 2}
+  },
+  result = laserMinigun
+})
+
 -- Add techs
 addEffectToTech("automated-gun-turret-2",
   {
@@ -151,5 +197,12 @@ addEffectToTech("uranium-ammo",
   {
     type = "unlock-recipe",
     recipe = laserAmmo
+  }
+)
+
+addEffectToTech("automated-gun-turret-2",
+  {
+    type = "unlock-recipe",
+    recipe = laserMinigun
   }
 )
