@@ -72,7 +72,7 @@ All cannon ammunition
 
 ### Artillery Shells
 Artillery-based ammunition
-- **New Stack Size:** 5
+- **New Stack Size:** 1
 - **Current Stack Size:** 10 (current Rampant Arsenal - already low)
 - **Affected Items:**
   - All artillery shell variants
@@ -101,7 +101,7 @@ Capsule turret ammunition
 
 ### Flamethrower Ammo
 Flamethrower fuel/ammunition
-- **New Stack Size:** 20
+- **New Stack Size:** 10
 - **Current Stack Size:** 200 (current Rampant Arsenal)
 - **Affected Items:**
   - All flamethrower ammo variants
@@ -121,9 +121,9 @@ Flamethrower fuel/ammunition
 - [ ] Grenade launcher ammo stack sizes (5)
 - [ ] Shotgun shells stack sizes (20)
 - [ ] Cannon shells stack sizes (10)
-- [ ] Artillery shells stack sizes (5)
+- [ ] Artillery shells stack sizes (1)
 - [ ] Laser ammo stack sizes (20)
 - [ ] Landmines stack sizes (20)
 - [ ] Turret capsules stack sizes (10)
-- [ ] Flamethrower ammo stack sizes (20)
+- [ ] Flamethrower ammo stack sizes (10)
 - [ ] Testing and balance validation
