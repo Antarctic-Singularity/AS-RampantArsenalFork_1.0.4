@@ -1139,7 +1139,7 @@ function guns.enable()
     local laserGun = makeGun(
       {
         name = "laser-gun",
-        icon = "__base__/graphics/icons/assault-rifle.png",
+        icon = "__RampantArsenalFork__/graphics/icons/laser-gun.png",
         iconSize = 64,
         order = "d[laser-gun]"
       },
@@ -1196,7 +1196,7 @@ function guns.enable()
     -- Laser Ammo
     local laserAmmo = makeAmmo({
       name = "laser-ammo",
-      icon = "__base__/graphics/icons/piercing-rounds-magazine.png",
+      icon = "__RampantArsenalFork__/graphics/icons/laser-ammo.png",
       order = "b[laser]",
       magSize = 1,
       stackSize = 200,
@@ -1241,7 +1241,7 @@ function guns.enable()
 
     makeRecipe({
       name = laserAmmo,
-      icon = "__base__/graphics/icons/piercing-rounds-magazine.png",
+      icon = "__RampantArsenalFork__/graphics/icons/laser-ammo.png",
       enabled = false,
       category = "crafting",
       ingredients = {
@@ -1256,7 +1256,7 @@ function guns.enable()
 
     makeRecipe({
       name = laserGun,
-      icon = "__base__/graphics/icons/assault-rifle.png",
+      icon = "__RampantArsenalFork__/graphics/icons/laser-gun.png",
       enabled = false,
       category = "crafting",
       ingredients = {
@@ -1312,7 +1312,7 @@ function guns.enable()
       acceleration = 0,
       directionOnly = true,
       piercingDamage = 5,
-      tint = {r = 0.6, g = 0.6, b = 0.4},
+      tint = {r = 0.8, g = 0.7, b = 0.5},
       action = {
         {
           type = "direct",
@@ -1352,7 +1352,7 @@ function guns.enable()
 
     local splinterRoundsAmmo = makeAmmo({
       name = "splinter-rounds",
-      icon = "__RampantArsenalFork__/graphics/icons/piercing-rounds-magazine.png",
+      icon = "__RampantArsenalFork__/graphics/icons/splinter-rounds.png",
       order = "b[splinter]",
       magSize = 1,
       stackSize = 200,
@@ -1374,7 +1374,7 @@ function guns.enable()
 
     makeRecipe({
       name = splinterRoundsAmmo,
-      icon = "__RampantArsenalFork__/graphics/icons/piercing-rounds-magazine.png",
+      icon = "__RampantArsenalFork__/graphics/icons/splinter-rounds.png",
       enabled = false,
       category = "crafting",
       ingredients = {
