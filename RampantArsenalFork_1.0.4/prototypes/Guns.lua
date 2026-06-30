@@ -1134,6 +1134,263 @@ function guns.enable()
     data.raw["projectile"]["uranium-cannon-projectile"].force_condition = "not-same"
     data.raw["projectile"]["explosive-uranium-cannon-projectile"].force_condition = "not-same"
     data.raw["projectile"]["explosive-cannon-projectile"].force_condition = "not-same"
+
+    -- Laser Gun
+    local laserGun = makeGun(
+      {
+        name = "laser-gun",
+        icon = "__base__/graphics/icons/assault-rifle.png",
+        iconSize = 64,
+        order = "d[laser-gun]"
+      },
+      {
+        type = "projectile",
+        ammo_category = "laser-ammo",
+        cooldown = 5,
+        movement_slow_down_factor = 0.95,
+        damage_modifier = 1.0,
+        gun_center_shift = {
+          north = {0, 0},
+          east = {0.15625, 0},
+          south = {0, 0},
+          west = {-0.15625, 0}
+        },
+        gun_barrel_shift = {
+          north = {0, -0.40625},
+          east = {0.40625, 0},
+          south = {0, 0.40625},
+          west = {-0.40625, 0}
+        }
+      }
+    )
+
+    -- Laser Minigun
+    local laserMinigun = makeGun(
+      {
+        name = "laser-minigun",
+        icon = "__RampantArsenalFork__/graphics/icons/minigun.png",
+        iconSize = 64,
+        order = "d[laser-minigun]"
+      },
+      {
+        type = "projectile",
+        ammo_category = "laser-ammo",
+        cooldown = 3,
+        movement_slow_down_factor = 0.7,
+        damage_modifier = 1.2,
+        gun_center_shift = {
+          north = {0, 0},
+          east = {0.15625, 0},
+          south = {0, 0},
+          west = {-0.15625, 0}
+        },
+        gun_barrel_shift = {
+          north = {0, -0.40625},
+          east = {0.40625, 0},
+          south = {0, 0.40625},
+          west = {-0.40625, 0}
+        }
+      }
+    )
+
+    -- Laser Ammo
+    local laserAmmo = makeAmmo({
+      name = "laser-ammo",
+      icon = "__base__/graphics/icons/piercing-rounds-magazine.png",
+      order = "b[laser]",
+      magSize = 1,
+      stackSize = 200,
+      ammo_category = "laser-ammo",
+      ammoType = {
+        category = "laser-ammo",
+        action = {
+          {
+            type = "direct",
+            action_delivery = {
+              type = "projectile",
+              projectile = makeShotgunProjectile({
+                name = "laser-ammo",
+                collisionBox = {{-0.3, -0.3}, {0.3, 0.3}},
+                acceleration = 0,
+                directionOnly = true,
+                piercingDamage = 5,
+                tint = {r = 1, g = 0.2, b = 0.2, a = 1},
+                action = {
+                  type = "direct",
+                  action_delivery = {
+                    type = "instant",
+                    target_effects = {
+                      {
+                        type = "damage",
+                        damage = {amount = 35, type = "laser"}
+                      },
+                      {
+                        type = "create-entity",
+                        entity_name = "explosion-gunshot"
+                      }
+                    }
+                  }
+                }
+              }),
+              starting_speed = 0.5
+            }
+          }
+        }
+      }
+    })
+
+    makeRecipe({
+      name = laserAmmo,
+      icon = "__base__/graphics/icons/piercing-rounds-magazine.png",
+      enabled = false,
+      category = "crafting",
+      ingredients = {
+        {type = "item", name = "copper-plate", amount = 5},
+        {type = "item", name = "steel-plate", amount = 2},
+        {type = "item", name = "processing-unit", amount = 1},
+        {type = "item", name = "electronic-circuit", amount = 2},
+        {type = "item", name = "firearm-magazine", amount = 1}
+      },
+      result = laserAmmo
+    })
+
+    makeRecipe({
+      name = laserGun,
+      icon = "__base__/graphics/icons/assault-rifle.png",
+      enabled = false,
+      category = "crafting",
+      ingredients = {
+        {type = "item", name = "steel-plate", amount = 10},
+        {type = "item", name = "low-density-structure", amount = 5},
+        {type = "item", name = "advanced-circuit", amount = 5},
+        {type = "item", name = "electric-engine-unit", amount = 1}
+      },
+      result = laserGun
+    })
+
+    makeRecipe({
+      name = laserMinigun,
+      icon = "__RampantArsenalFork__/graphics/icons/minigun.png",
+      enabled = false,
+      category = "crafting",
+      ingredients = {
+        {type = "item", name = laserGun, amount = 1},
+        {type = "item", name = "steel-plate", amount = 15},
+        {type = "item", name = "low-density-structure", amount = 10},
+        {type = "item", name = "advanced-circuit", amount = 10},
+        {type = "item", name = "processing-unit", amount = 3},
+        {type = "item", name = "electric-engine-unit", amount = 2}
+      },
+      result = laserMinigun
+    })
+
+    addEffectToTech("automated-gun-turret-2",
+      {
+        type = "unlock-recipe",
+        recipe = laserGun
+      }
+    )
+
+    addEffectToTech("uranium-ammo",
+      {
+        type = "unlock-recipe",
+        recipe = laserAmmo
+      }
+    )
+
+    addEffectToTech("automated-gun-turret-2",
+      {
+        type = "unlock-recipe",
+        recipe = laserMinigun
+      }
+    )
+
+    -- Splinter Rounds
+    local splinterProjectile = makeShotgunProjectile({
+      name = "splinter",
+      collisionBox = {{-0.3, -0.3}, {0.3, 0.3}},
+      acceleration = 0,
+      directionOnly = true,
+      piercingDamage = 5,
+      tint = {r = 0.6, g = 0.6, b = 0.4},
+      action = {
+        {
+          type = "direct",
+          action_delivery = {
+            type = "instant",
+            target_effects = {
+              {
+                type = "damage",
+                damage = {amount = 35, type = "physical"}
+              },
+              {
+                type = "create-entity",
+                entity_name = "explosion-gunshot"
+              }
+            }
+          }
+        },
+        {
+          type = "area",
+          radius = 4,
+          action_delivery = {
+            type = "instant",
+            target_effects = {
+              {
+                type = "damage",
+                damage = {amount = 15, type = "physical"}
+              },
+              {
+                type = "create-entity",
+                entity_name = "small-explosion"
+              }
+            }
+          }
+        }
+      }
+    })
+
+    local splinterRoundsAmmo = makeAmmo({
+      name = "splinter-rounds",
+      icon = "__RampantArsenalFork__/graphics/icons/piercing-rounds-magazine.png",
+      order = "b[splinter]",
+      magSize = 1,
+      stackSize = 200,
+      ammo_category = "bullet",
+      ammoType = {
+        category = "bullet",
+        action = {
+          {
+            type = "direct",
+            action_delivery = {
+              type = "projectile",
+              projectile = splinterProjectile,
+              starting_speed = 0.5
+            }
+          }
+        }
+      }
+    })
+
+    makeRecipe({
+      name = splinterRoundsAmmo,
+      icon = "__RampantArsenalFork__/graphics/icons/piercing-rounds-magazine.png",
+      enabled = false,
+      category = "crafting",
+      ingredients = {
+        {type = "item", name = "uranium-238", amount = 2},
+        {type = "item", name = "copper-plate", amount = 5},
+        {type = "item", name = "steel-plate", amount = 2},
+        {type = "item", name = "firearm-magazine", amount = 1}
+      },
+      result = splinterRoundsAmmo
+    })
+
+    addEffectToTech("uranium-ammo", {
+      type = "unlock-recipe",
+      recipe = splinterRoundsAmmo
+    })
+
 end
 
 return guns

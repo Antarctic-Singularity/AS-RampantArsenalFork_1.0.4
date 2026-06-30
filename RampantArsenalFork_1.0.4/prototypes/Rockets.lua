@@ -616,6 +616,288 @@ function rockets.enable()
                             type = "unlock-recipe",
                             recipe = bioRocketAmmo,
         })
+
+        -- Cluster missiles
+        local clusterMissileAmmo = makeAmmo({
+                name = "cluster-missile-rampant-arsenal",
+                icon = "__RampantArsenalFork__/graphics/icons/he-rocket.png",
+                order = "d[rocket-launcher]-c[cluster]",
+                magSize = 1,
+                stackSize = 200,
+                ammo_category = "rocket",
+                ammoType = {
+                    category = "rocket",
+                    action = {
+                        {
+                            type = "direct",
+                            action_delivery = {
+                                type = "instant",
+                                source_effects = {
+                                    {
+                                        type = "create-explosion",
+                                        entity_name = "explosion-gunshot"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            type = "direct",
+                            action_delivery = {
+                                type = "projectile",
+                                starting_speed = 0.1,
+                                projectile = makeRocketProjectile({
+                                        name = "cluster-missile",
+                                        action = {
+                                            {
+                                                type = "direct",
+                                                action_delivery = {
+                                                    type = "instant",
+                                                    target_effects = {
+                                                        {type = "create-entity", entity_name = "grenade-explosion"},
+                                                        {type = "create-entity", entity_name = "small-scorchmark-tintable", check_buildability = true}
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                type = "cluster",
+                                                cluster_count = 7,
+                                                distance = 4,
+                                                distance_deviation = 3,
+                                                action_delivery = {
+                                                    type = "projectile",
+                                                    projectile = "grenade",
+                                                    direction_deviation = 0.6,
+                                                    starting_speed = 0.25,
+                                                    starting_speed_deviation = 0.3
+                                                }
+                                            }
+                                        }
+                                })
+                            }
+                        }
+                    }
+                }
+        })
+
+        makeRecipe({
+                name = clusterMissileAmmo,
+                icon = "__RampantArsenalFork__/graphics/icons/he-rocket.png",
+                enabled = false,
+                category = "crafting",
+                ingredients = {
+                    {type = "item", name = "explosive-rocket", amount = 1},
+                    {type = "item", name = "steel-plate", amount = 2},
+                    {type = "item", name = "explosives", amount = 8}
+                },
+                result = clusterMissileAmmo,
+        })
+
+        addEffectToTech("he-rockets",
+                        {
+                            type = "unlock-recipe",
+                            recipe = clusterMissileAmmo,
+        })
+
+        -- Incendiary cluster missile
+        local incendiaryClusterMissileAmmo = makeAmmo({
+                name = "incendiary-cluster-missile-rampant-arsenal",
+                icon = "__RampantArsenalFork__/graphics/icons/incendiary-rocket.png",
+                order = "d[rocket-launcher]-c[cluster-incendiary]",
+                magSize = 1,
+                stackSize = 200,
+                ammo_category = "rocket",
+                ammoType = {
+                    category = "rocket",
+                    action = {
+                        {
+                            type = "direct",
+                            action_delivery = {
+                                type = "instant",
+                                source_effects = {
+                                    {
+                                        type = "create-explosion",
+                                        entity_name = "explosion-gunshot"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            type = "direct",
+                            action_delivery = {
+                                type = "projectile",
+                                starting_speed = 0.1,
+                                projectile = makeRocketProjectile({
+                                        name = "incendiary-cluster-missile",
+                                        action = {
+                                            {
+                                                type = "direct",
+                                                action_delivery = {
+                                                    type = "instant",
+                                                    target_effects = {
+                                                        {type = "create-entity", entity_name = "explosion"},
+                                                        {type = "create-entity", entity_name = "small-scorchmark-tintable", check_buildability = true}
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                type = "cluster",
+                                                cluster_count = 7,
+                                                distance = 4,
+                                                distance_deviation = 3,
+                                                action_delivery = {
+                                                    type = "instant",
+                                                    target_effects = {
+                                                        {
+                                                            type = "create-fire",
+                                                            entity_name = "fire-flame",
+                                                            initial_ground_flame_count = 4,
+                                                            check_buildability = true,
+                                                            show_in_tooltip = true
+                                                        },
+                                                        {
+                                                            type = "damage",
+                                                            damage = {amount = 120, type = "fire"},
+                                                            apply_damage_to_trees = false
+                                                        },
+                                                        {
+                                                            type = "damage",
+                                                            damage = {amount = 15, type = "explosion"},
+                                                            apply_damage_to_trees = false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                })
+                            }
+                        }
+                    }
+                }
+        })
+
+        makeRecipe({
+                name = incendiaryClusterMissileAmmo,
+                icon = "__RampantArsenalFork__/graphics/icons/incendiary-rocket.png",
+                enabled = false,
+                category = "crafting-with-fluid",
+                ingredients = {
+                    {type = "item", name = "cluster-missile-rampant-arsenal", amount = 1},
+                    {type = "item", name = "steel-plate", amount = 3},
+                    {type = "item", name = "explosives", amount = 4},
+                    {type = "fluid", name = "light-oil", amount = 60}
+                },
+                result = incendiaryClusterMissileAmmo,
+        })
+
+        addEffectToTech("incendiary-rockets",
+                        {
+                            type = "unlock-recipe",
+                            recipe = incendiaryClusterMissileAmmo,
+        })
+
+        -- Super cluster rocket
+        local superClusterRocketAmmo = makeAmmo({
+                name = "super-cluster-rocket-rampant-arsenal",
+                icon = "__RampantArsenalFork__/graphics/icons/he-rocket.png",
+                order = "d[rocket-launcher]-c[super-cluster]",
+                magSize = 1,
+                stackSize = 100,
+                ammo_category = "rocket",
+                ammoType = {
+                    category = "rocket",
+                    action = {
+                        {
+                            type = "direct",
+                            action_delivery = {
+                                type = "instant",
+                                source_effects = {
+                                    {
+                                        type = "create-explosion",
+                                        entity_name = "explosion-gunshot"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            type = "direct",
+                            action_delivery = {
+                                type = "projectile",
+                                starting_speed = 0.1,
+                                projectile = makeRocketProjectile({
+                                        name = "super-cluster-rocket",
+                                        action = {
+                                            {
+                                                type = "direct",
+                                                action_delivery = {
+                                                    type = "instant",
+                                                    target_effects = {
+                                                        {type = "create-entity", entity_name = "big-explosion"},
+                                                        {type = "create-entity", entity_name = "small-scorchmark-tintable", check_buildability = true}
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                type = "cluster",
+                                                cluster_count = 7,
+                                                distance = 4,
+                                                distance_deviation = 3,
+                                                action_delivery = {
+                                                    type = "instant",
+                                                    target_effects = {
+                                                        {
+                                                            type = "damage",
+                                                            damage = {amount = 350, type = "explosion"}
+                                                        },
+                                                        {
+                                                            type = "damage",
+                                                            damage = {amount = 25, type = "fire"},
+                                                            apply_damage_to_trees = false
+                                                        },
+                                                        {
+                                                            type = "push-back",
+                                                            distance = 1
+                                                        },
+                                                        {
+                                                            type = "create-fire",
+                                                            entity_name = "fire-flame",
+                                                            initial_ground_flame_count = 3,
+                                                            check_buildability = true,
+                                                            show_in_tooltip = true
+                                                        },
+                                                        {
+                                                            type = "create-entity",
+                                                            entity_name = "medium-explosion"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                })
+                            }
+                        }
+                    }
+                }
+        })
+
+        makeRecipe({
+                name = superClusterRocketAmmo,
+                icon = "__RampantArsenalFork__/graphics/icons/he-rocket.png",
+                enabled = false,
+                category = "crafting",
+                ingredients = {
+                    {type = "item", name = "explosive-rocket", amount = 2},
+                    {type = "item", name = "steel-plate", amount = 5},
+                    {type = "item", name = "explosives", amount = 15},
+                    {type = "item", name = "processing-unit", amount = 2}
+                },
+                result = superClusterRocketAmmo,
+        })
+
+        addEffectToTech("he-rockets",
+                        {
+                            type = "unlock-recipe",
+                            recipe = superClusterRocketAmmo,
+        })
     end
 
 end
