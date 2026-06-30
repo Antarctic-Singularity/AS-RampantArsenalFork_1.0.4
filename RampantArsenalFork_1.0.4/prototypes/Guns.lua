@@ -1241,7 +1241,7 @@ function guns.enable()
 
     makeRecipe({
       name = laserAmmo,
-      icon = "__RampantArsenalFork__/graphics/icons/laser-ammo.png",
+      icon = "__RampantArsenalFork__/graphics/icons/recipe-laser-ammo.png",
       enabled = false,
       category = "crafting",
       ingredients = {
@@ -1256,7 +1256,7 @@ function guns.enable()
 
     makeRecipe({
       name = laserGun,
-      icon = "__RampantArsenalFork__/graphics/icons/laser-gun.png",
+      icon = "__RampantArsenalFork__/graphics/icons/recipe-laser-gun.png",
       enabled = false,
       category = "crafting",
       ingredients = {
@@ -1270,7 +1270,7 @@ function guns.enable()
 
     makeRecipe({
       name = laserMinigun,
-      icon = "__RampantArsenalFork__/graphics/icons/minigun.png",
+      icon = "__RampantArsenalFork__/graphics/icons/recipe-laser-minigun.png",
       enabled = false,
       category = "crafting",
       ingredients = {
@@ -1374,7 +1374,7 @@ function guns.enable()
 
     makeRecipe({
       name = splinterRoundsAmmo,
-      icon = "__RampantArsenalFork__/graphics/icons/splinter-rounds.png",
+      icon = "__RampantArsenalFork__/graphics/icons/recipe-splinter-rounds.png",
       enabled = false,
       category = "crafting",
       ingredients = {
