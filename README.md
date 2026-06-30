@@ -19,7 +19,26 @@ This is a **community fork** of the abandoned [Rampant Arsenal](https://mods.fac
 - Updated all prototypes and dependencies
 - Maintained original gameplay balance and features
 
-### New Features: Light Artillery Shells
+### New Features
+
+#### Cluster Missile Variants
+- **Cluster Missile**: Spawns 7 grenade clusters (245 total damage)
+- **Incendiary Cluster Missile**: Spawns fire clusters (840 fire + 105 explosion damage)
+- **Super Cluster Rocket**: High-damage variant (2450 explosion damage)
+- All missiles use existing rocket recipes and unlock via he-rockets tech
+
+#### Laser Weapons
+- **Laser Gun**: Portable laser weapon (35 laser damage per shot, cooldown 5)
+- **Laser Minigun**: High fire rate variant (cooldown 3, 1.2x damage bonus)
+- **Laser Ammo**: New ammunition type with laser damage
+- Unlocks via uranium-ammo and automated-gun-turret-2 technologies
+
+#### Splinter Rounds
+- Bullet ammunition with 35 direct damage + 15 AOE splash damage
+- 4-tile splash radius on impact
+- Unlocks via uranium-ammo technology
+
+#### Light Artillery Shells
 
 Added lightweight variants of all Rampant Arsenal artillery shells with optional integration to the **snip-light-artillery** mod:
 
