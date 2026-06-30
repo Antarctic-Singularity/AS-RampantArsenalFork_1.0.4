@@ -686,6 +686,52 @@ function technologies.enable()
                 time = 30
         })
 
+        local clusterMissileTech = makeTechnology({
+                name = "cluster-missiles",
+                icon="__RampantArsenalFork__/graphics/technology/cluster-missiles.png",
+                prerequisites = {he, "explosive-rocketry"},
+                effects = {},
+                count = 150,
+                ingredients = {
+                    {"automation-science-pack", 1},
+                    {"logistic-science-pack", 1},
+                    {"chemical-science-pack", 1},
+                    {"military-science-pack", 1}
+                },
+                time = 30
+        })
+
+        makeTechnology({
+                name = "incendiary-cluster-missiles",
+                icon="__RampantArsenalFork__/graphics/technology/cluster-missiles.png",
+                prerequisites = {clusterMissileTech, "incendiary", "refined-flammables-2"},
+                effects = {},
+                count = 200,
+                ingredients = {
+                    {"automation-science-pack", 1},
+                    {"logistic-science-pack", 1},
+                    {"chemical-science-pack", 1},
+                    {"military-science-pack", 1}
+                },
+                time = 30
+        })
+
+        makeTechnology({
+                name = "super-cluster-rockets",
+                icon="__RampantArsenalFork__/graphics/technology/cluster-missiles.png",
+                prerequisites = {clusterMissileTech, "stronger-explosives-4", "military-4", "processing-unit"},
+                effects = {},
+                count = 300,
+                ingredients = {
+                    {"automation-science-pack", 1},
+                    {"logistic-science-pack", 1},
+                    {"chemical-science-pack", 1},
+                    {"military-science-pack", 1},
+                    {"utility-science-pack", 1}
+                },
+                time = 30
+        })
+
     end
 
     makeTechnology({
@@ -771,6 +817,36 @@ function technologies.enable()
                 {"utility-science-pack", 1}
             },
             count = 2000,
+            time = 30
+    })
+
+    makeTechnology({
+            name = "laser-gun",
+            icon = "__RampantArsenalFork__/graphics/technology/laser-guns.png",
+            prerequisites = {"automated-gun-turret-2", "laser-weapons-damage-2", "military-3"},
+            effects = {},
+            ingredients = {
+                {"automation-science-pack", 1},
+                {"logistic-science-pack", 1},
+                {"chemical-science-pack", 1},
+                {"military-science-pack", 1}
+            },
+            count = 500,
+            time = 30
+    })
+
+    local laserGunTech = makeTechnology({
+            name = "laser-minigun",
+            icon = "__RampantArsenalFork__/graphics/technology/laser-minigun.png",
+            prerequisites = {"laser-gun", "laser-weapons-damage-4", "military-3", "engine"},
+            effects = {},
+            ingredients = {
+                {"automation-science-pack", 1},
+                {"logistic-science-pack", 1},
+                {"chemical-science-pack", 1},
+                {"military-science-pack", 1}
+            },
+            count = 750,
             time = 30
     })
 

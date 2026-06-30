@@ -1284,21 +1284,21 @@ function guns.enable()
       result = laserMinigun
     })
 
-    addEffectToTech("automated-gun-turret-2",
+    addEffectToTech("laser-gun",
       {
         type = "unlock-recipe",
         recipe = laserGun
       }
     )
 
-    addEffectToTech("uranium-ammo",
+    addEffectToTech("laser-gun",
       {
         type = "unlock-recipe",
         recipe = laserAmmo
       }
     )
 
-    addEffectToTech("automated-gun-turret-2",
+    addEffectToTech("laser-minigun",
       {
         type = "unlock-recipe",
         recipe = laserMinigun

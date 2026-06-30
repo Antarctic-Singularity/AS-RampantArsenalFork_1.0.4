@@ -692,7 +692,7 @@ function rockets.enable()
                 result = clusterMissileAmmo,
         })
 
-        addEffectToTech("he-rockets",
+        addEffectToTech("cluster-missiles",
                         {
                             type = "unlock-recipe",
                             recipe = clusterMissileAmmo,
@@ -789,7 +789,7 @@ function rockets.enable()
                 result = incendiaryClusterMissileAmmo,
         })
 
-        addEffectToTech("incendiary-rockets",
+        addEffectToTech("incendiary-cluster-missiles",
                         {
                             type = "unlock-recipe",
                             recipe = incendiaryClusterMissileAmmo,
@@ -893,7 +893,7 @@ function rockets.enable()
                 result = superClusterRocketAmmo,
         })
 
-        addEffectToTech("he-rockets",
+        addEffectToTech("super-cluster-rockets",
                         {
                             type = "unlock-recipe",
                             recipe = superClusterRocketAmmo,
