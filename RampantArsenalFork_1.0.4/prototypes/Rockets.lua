@@ -686,7 +686,6 @@ function rockets.enable()
 
         makeRecipe({
                 name = clusterMissileAmmo,
-                icon = "__RampantArsenalFork__/graphics/icons/recipe-cluster-missile.png",
                 enabled = false,
                 category = "crafting",
                 ingredients = {
@@ -787,7 +786,6 @@ function rockets.enable()
 
         makeRecipe({
                 name = incendiaryClusterMissileAmmo,
-                icon = "__RampantArsenalFork__/graphics/icons/recipe-incendiary-cluster-missile.png",
                 enabled = false,
                 category = "crafting-with-fluid",
                 ingredients = {
@@ -896,7 +894,6 @@ function rockets.enable()
 
         makeRecipe({
                 name = superClusterRocketAmmo,
-                icon = "__RampantArsenalFork__/graphics/icons/recipe-super-cluster-rocket.png",
                 enabled = false,
                 category = "crafting",
                 ingredients = {
