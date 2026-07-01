@@ -1412,63 +1412,6 @@ function guns.enable()
       recipe = splinterRoundsAmmo
     })
 
-    -- Recycling recipes
-    makeRecipe({
-      name = "recycle-laser-gun",
-      enabled = true,
-      category = "recycling",
-      ingredients = {{type = "item", name = laserGun, amount = 1}},
-      results = {
-        {type = "item", name = "steel-plate", amount = 5},
-        {type = "item", name = "low-density-structure", amount = 2},
-        {type = "item", name = "advanced-circuit", amount = 2},
-        {type = "item", name = "electric-engine-unit", amount = 1}
-      },
-      energy_required = 5
-    })
-
-    makeRecipe({
-      name = "recycle-laser-minigun",
-      enabled = true,
-      category = "recycling",
-      ingredients = {{type = "item", name = laserMinigun, amount = 1}},
-      results = {
-        {type = "item", name = "steel-plate", amount = 8},
-        {type = "item", name = "low-density-structure", amount = 5},
-        {type = "item", name = "advanced-circuit", amount = 5},
-        {type = "item", name = "processing-unit", amount = 1},
-        {type = "item", name = "electric-engine-unit", amount = 1}
-      },
-      energy_required = 5
-    })
-
-    makeRecipe({
-      name = "recycle-laser-ammo",
-      enabled = true,
-      category = "recycling",
-      ingredients = {{type = "item", name = laserAmmo, amount = 1}},
-      results = {
-        {type = "item", name = "copper-plate", amount = 2},
-        {type = "item", name = "steel-plate", amount = 1},
-        {type = "item", name = "processing-unit", amount = 1}
-      },
-      energy_required = 1
-    })
-
-    makeRecipe({
-      name = "recycle-splinter-rounds",
-      enabled = true,
-      category = "recycling",
-      ingredients = {{type = "item", name = splinterRoundsAmmo, amount = 1}},
-      results = {
-        {type = "item", name = "uranium-238", amount = 1},
-        {type = "item", name = "copper-plate", amount = 2},
-        {type = "item", name = "steel-plate", amount = 1},
-        {type = "item", name = "firearm-magazine", amount = 1}
-      },
-      energy_required = 1
-    })
-
 end
 
 return guns
