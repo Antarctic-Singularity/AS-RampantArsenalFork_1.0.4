@@ -704,7 +704,7 @@ function technologies.enable()
         makeTechnology({
                 name = "incendiary-cluster-missiles",
                 icon="__RampantArsenalFork__/graphics/technology/cluster-missiles.png",
-                prerequisites = {clusterMissileTech, "incendiary", "refined-flammables-2"},
+                prerequisites = {clusterMissileTech, incendiary, "refined-flammables-2"},
                 effects = {},
                 count = 200,
                 ingredients = {
