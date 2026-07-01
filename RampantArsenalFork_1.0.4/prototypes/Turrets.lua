@@ -78,6 +78,13 @@ function turrets.addTurrets()
             }
     })
 
+    data:extend({
+            {
+                type = "ammo-category",
+                name = "laser-ammo"
+            }
+    })
+
     data.raw["character"]["character"].damage_hit_tint = {r = 0, g = 0.2, b = 0, a = 0}
 
     enableTechnologies()
