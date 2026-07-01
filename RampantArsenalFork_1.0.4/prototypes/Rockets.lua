@@ -650,27 +650,64 @@ function rockets.enable()
                     projectile = makeRocketProjectile({
                       name = "cluster-missile",
                       action = {
-                        {
-                          type = "direct",
-                          action_delivery = {
-                            type = "instant",
-                            target_effects = {
-                              {type = "create-entity", entity_name = "grenade-explosion"},
-                              {type = "create-entity", entity_name = "small-scorchmark-tintable", check_buildability = true}
+                        type = "direct",
+                        action_delivery = {
+                          type = "instant",
+                          target_effects = {
+                            {
+                              type = "nested-result",
+                              affects_target = true,
+                              action = {
+                                {
+                                  type = "area",
+                                  radius = 5,
+                                  action_delivery = {
+                                    type = "instant",
+                                    target_effects = {
+                                      {
+                                        type = "push-back",
+                                        distance = 0.5
+                                      },
+                                      {
+                                        type = "damage",
+                                        damage = {amount = 300, type = "explosion"}
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  type = "cluster",
+                                  cluster_count = 7,
+                                  distance = 4,
+                                  distance_deviation = 3,
+                                  action_delivery = {
+                                    type = "projectile",
+                                    projectile = "grenade",
+                                    direction_deviation = 0.6,
+                                    starting_speed = 0.25,
+                                    starting_speed_deviation = 0.3
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              type = "invoke-tile-trigger",
+                              repeat_count = 1
+                            },
+                            {
+                              type = "destroy-decoratives",
+                              from_render_layer = "decorative",
+                              to_render_layer = "object",
+                              include_soft_decoratives = true,
+                              include_decals = false,
+                              invoke_decorative_trigger = true,
+                              decoratives_with_trigger_only = false,
+                              radius = 2
+                            },
+                            {
+                              type = "create-entity",
+                              entity_name = "medium-explosion"
                             }
-                          }
-                        },
-                        {
-                          type = "cluster",
-                          cluster_count = 7,
-                          distance = 4,
-                          distance_deviation = 3,
-                          action_delivery = {
-                            type = "projectile",
-                            projectile = "grenade",
-                            direction_deviation = 0.6,
-                            starting_speed = 0.25,
-                            starting_speed_deviation = 0.3
                           }
                         }
                       }
@@ -735,41 +772,79 @@ function rockets.enable()
                     projectile = makeRocketProjectile({
                       name = "incendiary-cluster-missile",
                       action = {
-                        {
-                          type = "direct",
-                          action_delivery = {
-                            type = "instant",
-                            target_effects = {
-                              {type = "create-entity", entity_name = "explosion"},
-                              {type = "create-entity", entity_name = "small-scorchmark-tintable", check_buildability = true}
-                            }
-                          }
-                        },
-                        {
-                          type = "cluster",
-                          cluster_count = 7,
-                          distance = 4,
-                          distance_deviation = 3,
-                          action_delivery = {
-                            type = "instant",
-                            target_effects = {
-                              {
-                                type = "create-fire",
-                                entity_name = "fire-flame",
-                                initial_ground_flame_count = 4,
-                                check_buildability = true,
-                                show_in_tooltip = true
-                              },
-                              {
-                                type = "damage",
-                                damage = {amount = 120, type = "fire"},
-                                apply_damage_to_trees = false
-                              },
-                              {
-                                type = "damage",
-                                damage = {amount = 15, type = "explosion"},
-                                apply_damage_to_trees = false
+                        type = "direct",
+                        action_delivery = {
+                          type = "instant",
+                          target_effects = {
+                            {
+                              type = "nested-result",
+                              affects_target = true,
+                              action = {
+                                {
+                                  type = "cluster",
+                                  cluster_count = 7,
+                                  distance = 4,
+                                  distance_deviation = 3,
+                                  action_delivery = {
+                                    type = "instant",
+                                    target_effects = {
+                                      {
+                                        type = "create-fire",
+                                        entity_name = "fire-flame",
+                                        initial_ground_flame_count = 4,
+                                        check_buildability = true,
+                                        show_in_tooltip = true
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  type = "area",
+                                  radius = 6.5,
+                                  action_delivery = {
+                                    type = "instant",
+                                    target_effects = {
+                                      {
+                                        type = "create-fire",
+                                        entity_name = "fire-flame",
+                                        initial_ground_flame_count = 7
+                                      },
+                                      {
+                                        type = "create-sticker",
+                                        sticker = "small-fire-sticker-rampant-arsenal"
+                                      },
+                                      {
+                                        type = "damage",
+                                        damage = {amount = 300, type = "fire"},
+                                        apply_damage_to_trees = false
+                                      },
+                                      {
+                                        type = "damage",
+                                        damage = {amount = 100, type = "explosion"},
+                                        apply_damage_to_trees = false
+                                      }
+                                    }
+                                  }
+                                }
                               }
+                            },
+                            {
+                              type = "invoke-tile-trigger",
+                              repeat_count = 1
+                            },
+                            {
+                              type = "destroy-decoratives",
+                              from_render_layer = "decorative",
+                              to_render_layer = "object",
+                              include_soft_decoratives = true,
+                              include_decals = false,
+                              invoke_decorative_trigger = true,
+                              decoratives_with_trigger_only = false,
+                              radius = 3
+                            },
+                            {
+                              type = "create-entity",
+                              entity_name = "big-explosion"
                             }
                           }
                         }
@@ -837,48 +912,73 @@ function rockets.enable()
                     projectile = makeRocketProjectile({
                       name = "super-cluster-rocket",
                       action = {
-                        {
-                          type = "direct",
-                          action_delivery = {
-                            type = "instant",
-                            target_effects = {
-                              {type = "create-entity", entity_name = "big-explosion"},
-                              {type = "create-entity", entity_name = "small-scorchmark-tintable", check_buildability = true}
-                            }
-                          }
-                        },
-                        {
-                          type = "cluster",
-                          cluster_count = 7,
-                          distance = 4,
-                          distance_deviation = 3,
-                          action_delivery = {
-                            type = "instant",
-                            target_effects = {
-                              {
-                                type = "damage",
-                                damage = {amount = 350, type = "explosion"}
-                              },
-                              {
-                                type = "damage",
-                                damage = {amount = 25, type = "fire"},
-                                apply_damage_to_trees = false
-                              },
-                              {
-                                type = "push-back",
-                                distance = 1
-                              },
-                              {
-                                type = "create-fire",
-                                entity_name = "fire-flame",
-                                initial_ground_flame_count = 3,
-                                check_buildability = true,
-                                show_in_tooltip = true
-                              },
-                              {
-                                type = "create-entity",
-                                entity_name = "medium-explosion"
+                        type = "direct",
+                        action_delivery = {
+                          type = "instant",
+                          target_effects = {
+                            {
+                              type = "nested-result",
+                              affects_target = true,
+                              action = {
+                                {
+                                  type = "cluster",
+                                  cluster_count = 10,
+                                  distance = 6,
+                                  distance_deviation = 4,
+                                  action_delivery = {
+                                    type = "instant",
+                                    target_effects = {
+                                      {
+                                        type = "damage",
+                                        damage = {amount = 300, type = "explosion"}
+                                      },
+                                      {
+                                        type = "push-back",
+                                        distance = 1.5
+                                      },
+                                      {
+                                        type = "create-entity",
+                                        entity_name = "medium-explosion"
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  type = "area",
+                                  radius = 8,
+                                  action_delivery = {
+                                    type = "instant",
+                                    target_effects = {
+                                      {
+                                        type = "push-back",
+                                        distance = 2
+                                      },
+                                      {
+                                        type = "damage",
+                                        damage = {amount = 1000, type = "explosion"}
+                                      }
+                                    }
+                                  }
+                                }
                               }
+                            },
+                            {
+                              type = "invoke-tile-trigger",
+                              repeat_count = 1
+                            },
+                            {
+                              type = "destroy-decoratives",
+                              from_render_layer = "decorative",
+                              to_render_layer = "object",
+                              include_soft_decoratives = true,
+                              include_decals = false,
+                              invoke_decorative_trigger = true,
+                              decoratives_with_trigger_only = false,
+                              radius = 4
+                            },
+                            {
+                              type = "create-entity",
+                              entity_name = "big-explosion"
                             }
                           }
                         }
