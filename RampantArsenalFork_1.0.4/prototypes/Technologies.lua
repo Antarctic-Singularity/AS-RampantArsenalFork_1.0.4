@@ -704,7 +704,7 @@ function technologies.enable()
         makeTechnology({
                 name = "incendiary-cluster-missiles",
                 icon="__RampantArsenalFork__/graphics/technology/cluster-missiles.png",
-                prerequisites = {clusterMissileTech, incendiary, "refined-flammables-2"},
+                prerequisites = {clusterMissileTech, incendiary, "military-3"},
                 effects = {},
                 count = 200,
                 ingredients = {
@@ -820,7 +820,7 @@ function technologies.enable()
             time = 30
     })
 
-    makeTechnology({
+    local laserGunTech = makeTechnology({
             name = "laser-gun",
             icon = "__RampantArsenalFork__/graphics/technology/laser-guns.png",
             prerequisites = {"laser-turret", "laser-weapons-damage-2", "military-3"},
@@ -835,10 +835,10 @@ function technologies.enable()
             time = 30
     })
 
-    local laserGunTech = makeTechnology({
+    local laserMinigunTech = makeTechnology({
             name = "laser-minigun",
             icon = "__RampantArsenalFork__/graphics/technology/laser-minigun.png",
-            prerequisites = {"laser-gun", "laser-weapons-damage-4", "military-3", "engine"},
+            prerequisites = {laserGunTech, "laser-weapons-damage-4", "military-3", "engine"},
             effects = {},
             ingredients = {
                 {"automation-science-pack", 1},

@@ -434,10 +434,7 @@ function guns.enable()
                 }
         })
 
-        local heMagazineAmmo
-        -- if (settings.startup["rampant-arsenal-"]) then
-        -- end
-            = makeAmmo({
+        local heMagazineAmmo = makeAmmo({
                     name = "he-magazine",
                     icon = "__RampantArsenalFork__/graphics/icons/he-rounds-magazine.png",
                     order = "a[basic-clips]-c[he-rounds-magazine]",

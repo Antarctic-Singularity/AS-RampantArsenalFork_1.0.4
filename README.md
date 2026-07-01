@@ -68,7 +68,7 @@ Added lightweight variants of all Rampant Arsenal artillery shells with optional
 
 ## Installation
 
-Download from the [Factorio Mod Portal](https://mods.factorio.com/mod/RampantArsenalFork/) and enable in your mod list.
+Download from the [Factorio Mod Portal](https://mods.factorio.com/mod/RampantArsenalFork/) and enable in your mod list. 
 
 ### Dependencies
 - Factorio 2.0+
