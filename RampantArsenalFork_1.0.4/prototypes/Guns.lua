@@ -1149,6 +1149,8 @@ function guns.enable()
         cooldown = 5,
         movement_slow_down_factor = 0.95,
         damage_modifier = 1.0,
+        gun_barrel_length = 0.5,
+        range = 18,
         gun_center_shift = {
           north = {0, 0},
           east = {0.15625, 0},
@@ -1160,6 +1162,12 @@ function guns.enable()
           east = {0.40625, 0},
           south = {0, 0.40625},
           west = {-0.40625, 0}
+        },
+        sound = {
+          {
+            filename = "__base__/sound/fight/laser.ogg",
+            volume = 0.7
+          }
         }
       }
     )
@@ -1178,6 +1186,8 @@ function guns.enable()
         cooldown = 3,
         movement_slow_down_factor = 0.7,
         damage_modifier = 1.2,
+        gun_barrel_length = 0.5,
+        range = 18,
         gun_center_shift = {
           north = {0, 0},
           east = {0.15625, 0},
@@ -1189,6 +1199,12 @@ function guns.enable()
           east = {0.40625, 0},
           south = {0, 0.40625},
           west = {-0.40625, 0}
+        },
+        sound = {
+          {
+            filename = "__base__/sound/fight/laser.ogg",
+            volume = 0.8
+          }
         }
       }
     )
