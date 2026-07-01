@@ -710,7 +710,7 @@ function technologies.enable()
                 iconMipmaps = 4,
                 prerequisites = {clusterMissileTech, incendiary, "military-3"},
                 effects = {},
-                count = 500,
+                count = 600,
                 ingredients = {
                     {"automation-science-pack", 1},
                     {"logistic-science-pack", 1},
@@ -852,11 +852,11 @@ function technologies.enable()
             effects = {},
             ingredients = {
                 {"automation-science-pack", 1},
-                {"logistic-science-pack", 2},
+                {"logistic-science-pack", 3},
                 {"chemical-science-pack", 1},
                 {"military-science-pack", 1}
             },
-            count = 800,
+            count = 1000,
             time = 30
     })
 

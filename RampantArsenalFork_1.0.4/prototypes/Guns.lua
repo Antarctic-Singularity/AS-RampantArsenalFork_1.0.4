@@ -1287,13 +1287,13 @@ function guns.enable()
       enabled = false,
       category = "crafting",
       ingredients = {
-        {type = "item", name = laserGun, amount = 1},
-        {type = "item", name = "steel-plate", amount = 25},
-        {type = "item", name = "low-density-structure", amount = 15},
-        {type = "item", name = "advanced-circuit", amount = 15},
-        {type = "item", name = "processing-unit", amount = 5},
-        {type = "item", name = "battery", amount = 10},
-        {type = "item", name = "electric-engine-unit", amount = 3}
+        {type = "item", name = laserGun, amount = 2},
+        {type = "item", name = "steel-plate", amount = 35},
+        {type = "item", name = "low-density-structure", amount = 25},
+        {type = "item", name = "advanced-circuit", amount = 20},
+        {type = "item", name = "processing-unit", amount = 8},
+        {type = "item", name = "battery", amount = 15},
+        {type = "item", name = "electric-engine-unit", amount = 5}
       },
       result = laserMinigun
     })
