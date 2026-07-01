@@ -913,6 +913,46 @@ function rockets.enable()
                             type = "unlock-recipe",
                             recipe = superClusterRocketAmmo,
         })
+
+        -- Recycling recipes
+        makeRecipe({
+                name = "recycle-cluster-missile",
+                enabled = true,
+                category = "recycling",
+                ingredients = {{type = "item", name = clusterMissileAmmo, amount = 1}},
+                results = {
+                    {type = "item", name = "explosive-rocket", amount = 1},
+                    {type = "item", name = "steel-plate", amount = 1},
+                    {type = "item", name = "explosives", amount = 4}
+                },
+                energy_required = 1
+        })
+
+        makeRecipe({
+                name = "recycle-incendiary-cluster-missile",
+                enabled = true,
+                category = "recycling",
+                ingredients = {{type = "item", name = "incendiary-cluster-missile", amount = 1}},
+                results = {
+                    {type = "item", name = "cluster-missile", amount = 1},
+                    {type = "item", name = "crude-oil", amount = 10}
+                },
+                energy_required = 1
+        })
+
+        makeRecipe({
+                name = "recycle-super-cluster-rocket",
+                enabled = true,
+                category = "recycling",
+                ingredients = {{type = "item", name = superClusterRocketAmmo, amount = 1}},
+                results = {
+                    {type = "item", name = "explosive-rocket", amount = 1},
+                    {type = "item", name = "steel-plate", amount = 2},
+                    {type = "item", name = "explosives", amount = 8},
+                    {type = "item", name = "processing-unit", amount = 1}
+                },
+                energy_required = 2
+        })
     end
 
 end
