@@ -689,6 +689,8 @@ function technologies.enable()
         local clusterMissileTech = makeTechnology({
                 name = "cluster-missiles",
                 icon="__RampantArsenalFork__/graphics/technology/cluster-missiles.png",
+                iconSize = 256,
+                iconMipmaps = 4,
                 prerequisites = {he, "explosive-rocketry"},
                 effects = {},
                 count = 150,
@@ -704,6 +706,8 @@ function technologies.enable()
         makeTechnology({
                 name = "incendiary-cluster-missiles",
                 icon="__RampantArsenalFork__/graphics/technology/cluster-missiles.png",
+                iconSize = 256,
+                iconMipmaps = 4,
                 prerequisites = {clusterMissileTech, incendiary, "military-3"},
                 effects = {},
                 count = 200,
@@ -719,6 +723,8 @@ function technologies.enable()
         makeTechnology({
                 name = "super-cluster-rockets",
                 icon="__RampantArsenalFork__/graphics/technology/cluster-missiles.png",
+                iconSize = 256,
+                iconMipmaps = 4,
                 prerequisites = {clusterMissileTech, "stronger-explosives-4", "military-4", "processing-unit"},
                 effects = {},
                 count = 300,
@@ -823,6 +829,8 @@ function technologies.enable()
     local laserGunTech = makeTechnology({
             name = "laser-gun",
             icon = "__RampantArsenalFork__/graphics/technology/laser-guns.png",
+            iconSize = 256,
+            iconMipmaps = 4,
             prerequisites = {"laser-turret", "laser-weapons-damage-2", "military-3"},
             effects = {},
             ingredients = {
@@ -838,6 +846,8 @@ function technologies.enable()
     local laserMinigunTech = makeTechnology({
             name = "laser-minigun",
             icon = "__RampantArsenalFork__/graphics/technology/laser-minigun.png",
+            iconSize = 256,
+            iconMipmaps = 4,
             prerequisites = {laserGunTech, "laser-weapons-damage-4", "military-3", "engine"},
             effects = {},
             ingredients = {

@@ -1137,7 +1137,6 @@ function guns.enable()
       {
         name = "laser-gun",
         icon = "__RampantArsenalFork__/graphics/icons/laser-gun.png",
-        iconSize = 64,
         order = "d[laser-gun]"
       },
       {
@@ -1174,7 +1173,6 @@ function guns.enable()
       {
         name = "laser-minigun",
         icon = "__RampantArsenalFork__/graphics/icons/minigun.png",
-        iconSize = 64,
         order = "d[laser-minigun]"
       },
       {
@@ -1212,6 +1210,7 @@ function guns.enable()
         type = "ammo",
         name = "laser-ammo",
         icon = "__RampantArsenalFork__/graphics/icons/laser-ammo.png",
+        icon_size = 32,
         order = "b[laser]",
         stack_size = 200,
         ammo_category = "laser-ammo",
@@ -1372,6 +1371,7 @@ function guns.enable()
         type = "ammo",
         name = "splinter-rounds",
         icon = "__RampantArsenalFork__/graphics/icons/splinter-rounds.png",
+        icon_size = 32,
         order = "b[splinter]",
         stack_size = 200,
         ammo_category = "bullet",
