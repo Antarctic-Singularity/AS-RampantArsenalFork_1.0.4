@@ -1362,7 +1362,7 @@ function guns.enable()
               },
               {
                 type = "create-entity",
-                entity_name = "small-explosion"
+                entity_name = "explosion"
               }
             }
           }
