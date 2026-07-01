@@ -619,7 +619,7 @@ function rockets.enable()
 
         -- Cluster missiles
         local clusterMissileAmmo = makeAmmo({
-                name = "cluster-missile-rampant-arsenal",
+                name = "cluster-missile",
                 icon = "__RampantArsenalFork__/graphics/icons/he-rocket.png",
                 order = "d[rocket-launcher]-c[cluster]",
                 magSize = 1,
@@ -700,7 +700,7 @@ function rockets.enable()
 
         -- Incendiary cluster missile
         local incendiaryClusterMissileAmmo = makeAmmo({
-                name = "incendiary-cluster-missile-rampant-arsenal",
+                name = "incendiary-cluster-missile",
                 icon = "__RampantArsenalFork__/graphics/icons/incendiary-rocket.png",
                 order = "d[rocket-launcher]-c[cluster-incendiary]",
                 magSize = 1,
@@ -781,7 +781,7 @@ function rockets.enable()
                 enabled = false,
                 category = "crafting-with-fluid",
                 ingredients = {
-                    {type = "item", name = "cluster-missile-rampant-arsenal", amount = 1},
+                    {type = "item", name = "cluster-missile", amount = 1},
                     {type = "item", name = "steel-plate", amount = 3},
                     {type = "item", name = "explosives", amount = 4},
                     {type = "fluid", name = "light-oil", amount = 60}
@@ -797,7 +797,7 @@ function rockets.enable()
 
         -- Super cluster rocket
         local superClusterRocketAmmo = makeAmmo({
-                name = "super-cluster-rocket-rampant-arsenal",
+                name = "super-cluster-rocket",
                 icon = "__RampantArsenalFork__/graphics/icons/he-rocket.png",
                 order = "d[rocket-launcher]-c[super-cluster]",
                 magSize = 1,
