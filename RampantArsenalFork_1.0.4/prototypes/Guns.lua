@@ -1162,7 +1162,7 @@ function guns.enable()
         },
         sound = {
           {
-            filename = "__base__/sound/fight/laser.ogg",
+            filename = "__base__/sound/fight/electric-beam.ogg",
             volume = 0.7
           }
         }
@@ -1199,7 +1199,7 @@ function guns.enable()
         },
         sound = {
           {
-            filename = "__base__/sound/fight/laser.ogg",
+            filename = "__base__/sound/fight/electric-beam.ogg",
             volume = 0.8
           }
         }
