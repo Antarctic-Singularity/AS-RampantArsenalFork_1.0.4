@@ -823,7 +823,7 @@ function technologies.enable()
     makeTechnology({
             name = "laser-gun",
             icon = "__RampantArsenalFork__/graphics/technology/laser-guns.png",
-            prerequisites = {"automated-gun-turret-2", "laser-weapons-damage-2", "military-3"},
+            prerequisites = {"laser-turret", "laser-weapons-damage-2", "military-3"},
             effects = {},
             ingredients = {
                 {"automation-science-pack", 1},
