@@ -834,12 +834,12 @@ function technologies.enable()
             prerequisites = {"laser-turret", "laser-weapons-damage-2", "military-3"},
             effects = {},
             ingredients = {
-                {"automation-science-pack", 300},
-                {"logistic-science-pack", 300},
-                {"chemical-science-pack", 300},
-                {"military-science-pack", 300}
+                {"automation-science-pack", 1},
+                {"logistic-science-pack", 1},
+                {"chemical-science-pack", 1},
+                {"military-science-pack", 1}
             },
-            count = 1,
+            count = 300,
             time = 30
     })
 
@@ -851,12 +851,12 @@ function technologies.enable()
             prerequisites = {laserGunTech, "laser-weapons-damage-4", "military-4", "engine"},
             effects = {},
             ingredients = {
-                {"automation-science-pack", 800},
-                {"logistic-science-pack", 800},
-                {"chemical-science-pack", 800},
-                {"military-science-pack", 800}
+                {"automation-science-pack", 1},
+                {"logistic-science-pack", 1},
+                {"chemical-science-pack", 1},
+                {"military-science-pack", 1}
             },
-            count = 1,
+            count = 800,
             time = 30
     })
 
