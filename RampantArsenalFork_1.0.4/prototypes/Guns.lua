@@ -1210,50 +1210,54 @@ function guns.enable()
     )
 
     -- Laser Ammo
-    local laserAmmo = makeAmmo({
-      name = "laser-ammo",
-      icon = "__RampantArsenalFork__/graphics/icons/laser-ammo.png",
-      order = "b[laser]",
-      magSize = 1,
-      stackSize = 200,
-      ammo_category = "laser-ammo",
-      ammoType = {
-        category = "laser-ammo",
-        action = {
-          {
-            type = "direct",
-            action_delivery = {
-              type = "projectile",
-              projectile = makeShotgunProjectile({
-                name = "laser-ammo",
-                collisionBox = {{-0.3, -0.3}, {0.3, 0.3}},
-                acceleration = 0,
-                directionOnly = true,
-                piercingDamage = 5,
-                tint = {r = 1, g = 0.2, b = 0.2, a = 1},
-                action = {
-                  type = "direct",
-                  action_delivery = {
-                    type = "instant",
-                    target_effects = {
-                      {
-                        type = "damage",
-                        damage = {amount = 35, type = "laser"}
-                      },
-                      {
-                        type = "create-entity",
-                        entity_name = "explosion-gunshot"
+    data:extend({
+      {
+        type = "ammo",
+        name = "laser-ammo",
+        icon = "__RampantArsenalFork__/graphics/icons/laser-ammo.png",
+        order = "b[laser]",
+        stack_size = 200,
+        ammo_category = "laser-ammo",
+        ammo_type = {
+          category = "laser-ammo",
+          action = {
+            {
+              type = "direct",
+              action_delivery = {
+                type = "projectile",
+                projectile = makeShotgunProjectile({
+                  name = "laser-ammo",
+                  collisionBox = {{-0.3, -0.3}, {0.3, 0.3}},
+                  acceleration = 0,
+                  directionOnly = true,
+                  piercingDamage = 5,
+                  tint = {r = 1, g = 0.2, b = 0.2, a = 1},
+                  action = {
+                    type = "direct",
+                    action_delivery = {
+                      type = "instant",
+                      target_effects = {
+                        {
+                          type = "damage",
+                          damage = {amount = 35, type = "laser"}
+                        },
+                        {
+                          type = "create-entity",
+                          entity_name = "explosion-gunshot"
+                        }
                       }
                     }
                   }
-                }
-              }),
-              starting_speed = 0.5
+                }),
+                starting_speed = 0.5
+              }
             }
           }
         }
       }
     })
+
+    local laserAmmo = "laser-ammo"
 
     makeRecipe({
       name = laserAmmo,
@@ -1366,27 +1370,31 @@ function guns.enable()
       }
     })
 
-    local splinterRoundsAmmo = makeAmmo({
-      name = "splinter-rounds",
-      icon = "__RampantArsenalFork__/graphics/icons/splinter-rounds.png",
-      order = "b[splinter]",
-      magSize = 1,
-      stackSize = 200,
-      ammo_category = "bullet",
-      ammoType = {
-        category = "bullet",
-        action = {
-          {
-            type = "direct",
-            action_delivery = {
-              type = "projectile",
-              projectile = splinterProjectile,
-              starting_speed = 0.5
+    data:extend({
+      {
+        type = "ammo",
+        name = "splinter-rounds",
+        icon = "__RampantArsenalFork__/graphics/icons/splinter-rounds.png",
+        order = "b[splinter]",
+        stack_size = 200,
+        ammo_category = "bullet",
+        ammo_type = {
+          category = "bullet",
+          action = {
+            {
+              type = "direct",
+              action_delivery = {
+                type = "projectile",
+                projectile = splinterProjectile,
+                starting_speed = 0.5
+              }
             }
           }
         }
       }
     })
+
+    local splinterRoundsAmmo = "splinter-rounds"
 
     makeRecipe({
       name = splinterRoundsAmmo,
