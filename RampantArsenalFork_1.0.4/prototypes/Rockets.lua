@@ -708,7 +708,7 @@ function rockets.enable()
           {
             type = "ammo",
             name = "incendiary-cluster-missile",
-            icon = "__RampantArsenalFork__/graphics/icons/incendiary-rocket.png",
+            icon = "__RampantArsenalFork__/graphics/icons/incendiary-cluster-missile.png",
             icon_size = 32,
             order = "d[rocket-launcher]-c[cluster-incendiary]",
             stack_size = 200,
@@ -810,7 +810,7 @@ function rockets.enable()
           {
             type = "ammo",
             name = "super-cluster-rocket",
-            icon = "__RampantArsenalFork__/graphics/icons/he-rocket.png",
+            icon = "__RampantArsenalFork__/graphics/icons/super-cluster-rocket.png",
             icon_size = 32,
             order = "d[rocket-launcher]-c[super-cluster]",
             stack_size = 100,

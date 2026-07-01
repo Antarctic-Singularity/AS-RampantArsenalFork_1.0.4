@@ -705,7 +705,7 @@ function technologies.enable()
 
         makeTechnology({
                 name = "incendiary-cluster-missiles",
-                icon="__RampantArsenalFork__/graphics/technology/cluster-missiles.png",
+                icon="__RampantArsenalFork__/graphics/technology/incendiary-cluster-missiles.png",
                 iconSize = 256,
                 iconMipmaps = 4,
                 prerequisites = {clusterMissileTech, incendiary, "military-3"},
@@ -722,7 +722,7 @@ function technologies.enable()
 
         makeTechnology({
                 name = "super-cluster-rockets",
-                icon="__RampantArsenalFork__/graphics/technology/cluster-missiles.png",
+                icon="__RampantArsenalFork__/graphics/technology/super-cluster-rockets.png",
                 iconSize = 256,
                 iconMipmaps = 4,
                 prerequisites = {clusterMissileTech, "stronger-explosives-4", "military-4", "processing-unit"},
