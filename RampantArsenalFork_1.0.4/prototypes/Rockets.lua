@@ -677,7 +677,7 @@ function rockets.enable()
                                 },
                                 {
                                   type = "cluster",
-                                  cluster_count = 7,
+                                  cluster_count = 4,
                                   distance = 4,
                                   distance_deviation = 3,
                                   action_delivery = {
