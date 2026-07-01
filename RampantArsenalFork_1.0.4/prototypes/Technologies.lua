@@ -851,10 +851,7 @@ function technologies.enable()
             prerequisites = {laserGunTech, "laser-weapons-damage-4", "military-4", "engine"},
             effects = {},
             ingredients = {
-                {"automation-science-pack", 1},
-                {"logistic-science-pack", 1},
-                {"chemical-science-pack", 1},
-                {"military-science-pack", 1}
+                {"logistic-science-pack", 1}
             },
             count = 800,
             time = 30
