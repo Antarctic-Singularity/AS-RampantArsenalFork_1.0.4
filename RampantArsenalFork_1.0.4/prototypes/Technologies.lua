@@ -710,7 +710,7 @@ function technologies.enable()
                 iconMipmaps = 4,
                 prerequisites = {clusterMissileTech, incendiary, "military-3"},
                 effects = {},
-                count = 200,
+                count = 500,
                 ingredients = {
                     {"automation-science-pack", 1},
                     {"logistic-science-pack", 1},
@@ -834,12 +834,12 @@ function technologies.enable()
             prerequisites = {"laser-turret", "laser-weapons-damage-2", "military-3"},
             effects = {},
             ingredients = {
-                {"automation-science-pack", 1},
-                {"logistic-science-pack", 1},
-                {"chemical-science-pack", 1},
-                {"military-science-pack", 1}
+                {"automation-science-pack", 300},
+                {"logistic-science-pack", 300},
+                {"chemical-science-pack", 300},
+                {"military-science-pack", 300}
             },
-            count = 500,
+            count = 1,
             time = 30
     })
 
@@ -848,15 +848,15 @@ function technologies.enable()
             icon = "__RampantArsenalFork__/graphics/technology/laser-minigun.png",
             iconSize = 256,
             iconMipmaps = 4,
-            prerequisites = {laserGunTech, "laser-weapons-damage-4", "military-3", "engine"},
+            prerequisites = {laserGunTech, "laser-weapons-damage-4", "military-4", "engine"},
             effects = {},
             ingredients = {
-                {"automation-science-pack", 1},
-                {"logistic-science-pack", 1},
-                {"chemical-science-pack", 1},
-                {"military-science-pack", 1}
+                {"automation-science-pack", 800},
+                {"logistic-science-pack", 800},
+                {"chemical-science-pack", 800},
+                {"military-science-pack", 800}
             },
-            count = 750,
+            count = 1,
             time = 30
     })
 

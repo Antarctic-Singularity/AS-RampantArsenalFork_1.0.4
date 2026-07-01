@@ -1262,8 +1262,7 @@ function guns.enable()
       ingredients = {
         {type = "item", name = "copper-plate", amount = 5},
         {type = "item", name = "steel-plate", amount = 2},
-        {type = "item", name = "processing-unit", amount = 1},
-        {type = "item", name = "electronic-circuit", amount = 2},
+        {type = "item", name = "battery", amount = 2},
         {type = "item", name = "firearm-magazine", amount = 1}
       },
       result = laserAmmo
@@ -1274,10 +1273,11 @@ function guns.enable()
       enabled = false,
       category = "crafting",
       ingredients = {
-        {type = "item", name = "steel-plate", amount = 10},
-        {type = "item", name = "low-density-structure", amount = 5},
-        {type = "item", name = "advanced-circuit", amount = 5},
-        {type = "item", name = "electric-engine-unit", amount = 1}
+        {type = "item", name = "steel-plate", amount = 15},
+        {type = "item", name = "low-density-structure", amount = 8},
+        {type = "item", name = "advanced-circuit", amount = 8},
+        {type = "item", name = "battery", amount = 5},
+        {type = "item", name = "electric-engine-unit", amount = 2}
       },
       result = laserGun
     })
@@ -1288,11 +1288,12 @@ function guns.enable()
       category = "crafting",
       ingredients = {
         {type = "item", name = laserGun, amount = 1},
-        {type = "item", name = "steel-plate", amount = 15},
-        {type = "item", name = "low-density-structure", amount = 10},
-        {type = "item", name = "advanced-circuit", amount = 10},
-        {type = "item", name = "processing-unit", amount = 3},
-        {type = "item", name = "electric-engine-unit", amount = 2}
+        {type = "item", name = "steel-plate", amount = 25},
+        {type = "item", name = "low-density-structure", amount = 15},
+        {type = "item", name = "advanced-circuit", amount = 15},
+        {type = "item", name = "processing-unit", amount = 5},
+        {type = "item", name = "battery", amount = 10},
+        {type = "item", name = "electric-engine-unit", amount = 3}
       },
       result = laserMinigun
     })

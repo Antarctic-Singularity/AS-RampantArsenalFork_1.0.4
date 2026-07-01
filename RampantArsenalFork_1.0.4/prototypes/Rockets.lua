@@ -622,7 +622,7 @@ function rockets.enable()
           {
             type = "ammo",
             name = "cluster-missile",
-            icon = "__RampantArsenalFork__/graphics/icons/he-rocket.png",
+            icon = "__RampantArsenalFork__/graphics/icons/cluster-missile.png",
             icon_size = 32,
             order = "d[rocket-launcher]-c[cluster]",
             stack_size = 200,
@@ -788,11 +788,12 @@ function rockets.enable()
                 name = incendiaryClusterMissileAmmo,
                 enabled = false,
                 category = "crafting-with-fluid",
+                time = 15,
                 ingredients = {
                     {type = "item", name = "cluster-missile", amount = 1},
-                    {type = "item", name = "steel-plate", amount = 3},
-                    {type = "item", name = "explosives", amount = 4},
-                    {type = "fluid", name = "light-oil", amount = 60}
+                    {type = "item", name = "steel-plate", amount = 5},
+                    {type = "item", name = "explosives", amount = 6},
+                    {type = "fluid", name = "light-oil", amount = 80}
                 },
                 result = incendiaryClusterMissileAmmo,
         })
@@ -896,6 +897,7 @@ function rockets.enable()
                 name = superClusterRocketAmmo,
                 enabled = false,
                 category = "crafting",
+                time = 20,
                 ingredients = {
                     {type = "item", name = "explosive-rocket", amount = 2},
                     {type = "item", name = "steel-plate", amount = 5},
