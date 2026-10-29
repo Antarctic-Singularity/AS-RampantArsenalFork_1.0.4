@@ -2,6 +2,7 @@
 -- Physical turrets: #de2d29, laser/electric turrets: #ec2394, flame/fire turrets: #ec6023.
 -- Vanilla artillery turret: #ffffff.
 -- Applies to Rampant Arsenal turrets, modular (w93) turrets, and the vanilla turrets.
+-- Hero Turrets Redux copies (hero-turret-<rank>-for-<base name>) get the color of their base turret.
 
 local turretMapColors = {
     physical = {r = 0.871, g = 0.176, b = 0.161},
@@ -17,6 +18,10 @@ local function setTurretMapColor(turret, color)
     turret.enemy_map_color = color
 end
 
+local function baseTurretName(name)
+    return name:match("^hero%-turret%-%d+%-for%-(.+)$") or name
+end
+
 local turretTypeCategories = {
     ["ammo-turret"] = "physical",
     ["electric-turret"] = "laser",
@@ -30,17 +35,22 @@ local vanillaTurrets = {
     ["flamethrower-turret"] = {type = "fluid-turret", category = "fire"},
 }
 
+local function isInScope(baseName)
+    return baseName:find("%-rampant%-arsenal$") or baseName:find("^w93%-") or vanillaTurrets[baseName] ~= nil
+end
+
 for turretType, category in pairs(turretTypeCategories) do
     for name, turret in pairs(data.raw[turretType] or {}) do
-        if name:find("%-rampant%-arsenal$") or name:find("^w93%-") then
+        if isInScope(baseTurretName(name)) then
             setTurretMapColor(turret, turretMapColors[category])
         end
     end
 end
 
-for name, vanilla in pairs(vanillaTurrets) do
-    local turret = data.raw[vanilla.type] and data.raw[vanilla.type][name]
-    if turret then
-        setTurretMapColor(turret, turretMapColors[vanilla.category])
+for baseName, vanilla in pairs(vanillaTurrets) do
+    for name, turret in pairs(data.raw[vanilla.type] or {}) do
+        if baseTurretName(name) == baseName then
+            setTurretMapColor(turret, turretMapColors[vanilla.category])
+        end
     end
 end
