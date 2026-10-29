@@ -12,9 +12,10 @@ Date: 2026.10.28
       - Flame and fire turrets (Rampant Arsenal, vanilla flamethrower turret): #ec6023
       - Vanilla artillery turret: #ffffff
       - Hero Turrets Redux turrets get the map color of their base turret.
-    - Added optional compatibility dependencies: lex-aircraft, HeroTurretRedux, scattergun_turret.
+    - Added optional compatibility dependencies: HeroTurretRedux, scattergun_turret.
   Bugfixes:
     - Vanilla gun, laser and flamethrower turrets did not get their map view colors. They now do.
+    - Fixed "Circular dependencies detected" error with lex-aircraft. lex-aircraft still lists RampantArsenalFork as optional.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 2024.08.20
