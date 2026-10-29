@@ -124,7 +124,7 @@ function rockets.enable()
     local rocketTurret, rocketTurretItem = makeAmmoTurret(entity,
                                                           {
                                                               type = "projectile",
-                                                              ammo_category = "rocket", ammo_categories = {"rocket", "x-cluster-rocket"},
+                                                              ammo_category = "rocket", ammo_categories = {"rocket", "heavy-rockets"},
                                                               cooldown = 300,
                                                               projectile_creation_distance = 1.39375,
                                                               projectile_center = {0, -0.0875},
@@ -188,7 +188,7 @@ function rockets.enable()
     }
     local rapidRocketTurret, rapidRocketTurretItem = makeAmmoTurret(entity1, {
                                                                         type = "projectile",
-                                                                        ammo_category = "rocket", ammo_categories = {"rocket", "x-cluster-rocket"},
+                                                                        ammo_category = "rocket", ammo_categories = {"rocket", "heavy-rockets"},
                                                                         cooldown = 50,
                                                                         projectile_creation_distance = 1.39375,
                                                                         projectile_center = {0, -0.0875},
@@ -1024,7 +1024,7 @@ function rockets.enable()
         data:extend({
           {
             type = "ammo-category",
-            name = "x-cluster-rocket"
+            name = "heavy-rockets"
           },
           {
             type = "ammo",
@@ -1034,9 +1034,9 @@ function rockets.enable()
             order = "d[rocket-launcher]-c[x-cluster]",
             subgroup = "ammo",
             stack_size = 100,
-            ammo_category = "x-cluster-rocket",
+            ammo_category = "heavy-rockets",
             ammo_type = {
-              category = "x-cluster-rocket",
+              category = "heavy-rockets",
               cooldown_modifier = 1.5,
               action = {
                 {
