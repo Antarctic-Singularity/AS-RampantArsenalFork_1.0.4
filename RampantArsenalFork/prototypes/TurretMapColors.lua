@@ -16,11 +16,11 @@ local turretTypeCategories = {
     ["fluid-turret"] = "fire",
 }
 
-local vanillaTurretCategories = {
-    ["gun-turret"] = "physical",
-    ["artillery-turret"] = "artillery",
-    ["laser-turret"] = "laser",
-    ["flamethrower-turret"] = "fire",
+local vanillaTurrets = {
+    ["gun-turret"] = {type = "ammo-turret", category = "physical"},
+    ["artillery-turret"] = {type = "artillery-turret", category = "artillery"},
+    ["laser-turret"] = {type = "electric-turret", category = "laser"},
+    ["flamethrower-turret"] = {type = "fluid-turret", category = "fire"},
 }
 
 for turretType, category in pairs(turretTypeCategories) do
@@ -31,9 +31,9 @@ for turretType, category in pairs(turretTypeCategories) do
     end
 end
 
-for name, category in pairs(vanillaTurretCategories) do
-    local turret = data.raw[name] and data.raw[name][name]
+for name, vanilla in pairs(vanillaTurrets) do
+    local turret = data.raw[vanilla.type] and data.raw[vanilla.type][name]
     if turret then
-        turret.map_color = turretMapColors[category]
+        turret.map_color = turretMapColors[vanilla.category]
     end
 end
