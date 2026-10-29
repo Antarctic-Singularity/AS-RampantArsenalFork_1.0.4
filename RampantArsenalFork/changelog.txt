@@ -3,13 +3,17 @@ Version: 1.0.5
 Date: 2026.10.28
   Changes:
     - X Cluster Missile can no longer be fired from the Rocket Launcher or Rocket Launcher MkII. It can still be fired from rocket turrets.
+    - X Cluster Missile ammo category renamed to "heavy-rockets" (shown as "Heavy Rockets").
     - Cluster, Incendiary Cluster, Super Cluster and X Cluster missiles and their recipes are now in the Ammo section of the crafting menu.
-    - Added locale descriptions for the cluster missiles and the X Cluster ammo category name.
+    - Added locale descriptions for the cluster missiles.
     - Turret map view colors (set as map, friendly and enemy colors):
       - Physical turrets (Rampant Arsenal, modular/scattergun, vanilla gun turret): #de2d29
       - Laser and electric turrets (Rampant Arsenal, modular, vanilla laser turret): #ec2394
       - Flame and fire turrets (Rampant Arsenal, vanilla flamethrower turret): #ec6023
       - Vanilla artillery turret: #ffffff
+      - Hero Turrets Redux turrets get the map color of their base turret.
+  Bugfixes:
+    - Vanilla gun, laser and flamethrower turrets did not get their map view colors. They now do.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 2024.08.20
