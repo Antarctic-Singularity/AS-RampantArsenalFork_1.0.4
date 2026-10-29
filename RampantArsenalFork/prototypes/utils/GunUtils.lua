@@ -26,8 +26,6 @@ function gunUtils.makeGun(attributes, attack)
                 icon = attributes.icon or "__base__/graphics/icons/submachine-gun.png",
                 icon_size = attributes.iconSize or 32, icon_mipmaps = attributes.iconMipmaps or 1,
                 flags = attributes.flags or {},
-				hidden = true,
-				hidden_in_factoriopedia = true,
                 subgroup = "gun",
                 order = attributes.order or "a[basic-clips]-b[submachine-gun]",
                 attack_parameters = attack or

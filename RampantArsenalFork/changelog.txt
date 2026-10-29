@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: 2026.10.28
+  Changes:
+    - Turret map view colors:
+      - Physical turrets (Rampant Arsenal, modular/scattergun, vanilla gun turret): #de2d29
+      - Laser and electric turrets (Rampant Arsenal, modular, vanilla laser turret): #ec2394
+      - Flame and fire turrets (Rampant Arsenal, vanilla flamethrower turret): #ec6023
+      - Vanilla artillery turret: #ffffff
+---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 2024.08.20
   Improvements:

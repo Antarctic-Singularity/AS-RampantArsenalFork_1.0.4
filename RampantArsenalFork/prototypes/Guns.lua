@@ -28,6 +28,7 @@ local makeAmmoTurret = turretUtils.makeAmmoTurret
 local makeRecipe = recipeUtils.makeRecipe
 local makeAmmo = ammoUtils.makeAmmo
 local makeShotgunProjectile = projectileUtils.makeShotgunProjectile
+local makeLaserProjectile = projectileUtils.makeLaserProjectile
 local removeEffect = technologyUtils.removeEffect
 local addEffectToTech = technologyUtils.addEffectToTech
 
@@ -1221,12 +1222,12 @@ function guns.enable()
               type = "direct",
               action_delivery = {
                 type = "projectile",
-                projectile = makeShotgunProjectile({
+                projectile = makeLaserProjectile({
                   name = "laser-ammo",
                   collisionBox = {{-0.3, -0.3}, {0.3, 0.3}},
                   acceleration = 0,
                   directionOnly = true,
-                  piercingDamage = 5,
+                  piercingDamage = 50,
                   tint = {r = 1, g = 0.2, b = 0.2, a = 1},
                   action = {
                     type = "direct",
@@ -1235,7 +1236,7 @@ function guns.enable()
                       target_effects = {
                         {
                           type = "damage",
-                          damage = {amount = 35, type = "laser"}
+                          damage = {amount = 35, type = "physical"}
                         },
                         {
                           type = "create-entity",
@@ -1262,8 +1263,7 @@ function guns.enable()
       ingredients = {
         {type = "item", name = "copper-plate", amount = 5},
         {type = "item", name = "steel-plate", amount = 2},
-        {type = "item", name = "battery", amount = 2},
-        {type = "item", name = "firearm-magazine", amount = 1}
+        {type = "item", name = "battery", amount = 2}
       },
       result = laserAmmo
     })

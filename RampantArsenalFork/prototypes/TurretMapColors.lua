@@ -1,0 +1,39 @@
+-- Map view colors for turrets.
+-- Physical turrets: #de2d29, laser/electric turrets: #ec2394, flame/fire turrets: #ec6023.
+-- Vanilla artillery turret: #ffffff.
+-- Applies to Rampant Arsenal turrets, modular (w93) turrets, and the vanilla turrets.
+
+local turretMapColors = {
+    physical = {r = 0.871, g = 0.176, b = 0.161},
+    laser = {r = 0.925, g = 0.137, b = 0.580},
+    fire = {r = 0.925, g = 0.376, b = 0.137},
+    artillery = {r = 1, g = 1, b = 1},
+}
+
+local turretTypeCategories = {
+    ["ammo-turret"] = "physical",
+    ["electric-turret"] = "laser",
+    ["fluid-turret"] = "fire",
+}
+
+local vanillaTurretCategories = {
+    ["gun-turret"] = "physical",
+    ["artillery-turret"] = "artillery",
+    ["laser-turret"] = "laser",
+    ["flamethrower-turret"] = "fire",
+}
+
+for turretType, category in pairs(turretTypeCategories) do
+    for name, turret in pairs(data.raw[turretType] or {}) do
+        if name:find("%-rampant%-arsenal$") or name:find("^w93%-") then
+            turret.map_color = turretMapColors[category]
+        end
+    end
+end
+
+for name, category in pairs(vanillaTurretCategories) do
+    local turret = data.raw[name] and data.raw[name][name]
+    if turret then
+        turret.map_color = turretMapColors[category]
+    end
+end

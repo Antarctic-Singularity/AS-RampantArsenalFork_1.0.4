@@ -13,6 +13,7 @@
 -- You should have received a copy of the GNU General Public License
 -- along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+require("prototypes/TurretMapColors")
 
 if mods["Krastorio2"] and settings.startup["rampant-arsenal-enableVehicle"].value then
     data.raw["car"]["nuclear-tank-vehicle-rampant-arsenal"].burner = {

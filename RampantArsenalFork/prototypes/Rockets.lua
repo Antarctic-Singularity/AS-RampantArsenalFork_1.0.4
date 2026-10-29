@@ -1012,6 +1012,195 @@ function rockets.enable()
                             type = "unlock-recipe",
                             recipe = superClusterRocketAmmo,
         })
+
+        -- X Cluster missile (cloned from super-cluster-rocket, reusing the same sprites/tech)
+        data:extend({
+          {
+            type = "ammo",
+            name = "x-cluster-missile",
+            icon = "__RampantArsenalFork__/graphics/icons/super-cluster-rocket.png",
+            icon_size = 32,
+            order = "d[rocket-launcher]-c[x-cluster]",
+            stack_size = 100,
+            ammo_category = "rocket",
+            ammo_type = {
+              category = "rocket",
+              cooldown_modifier = 1.5,
+              action = {
+                {
+                  type = "direct",
+                  action_delivery = {
+                    type = "instant",
+                    source_effects = {
+                      {
+                        type = "create-explosion",
+                        entity_name = "explosion-gunshot"
+                      }
+                    }
+                  }
+                },
+                {
+                  type = "direct",
+                  action_delivery = {
+                    type = "projectile",
+                    starting_speed = 0.1,
+                    projectile = makeRocketProjectile({
+                      name = "x-cluster-missile",
+                      action = {
+                        type = "direct",
+                        action_delivery = {
+                          type = "instant",
+                          target_effects = {
+                            {
+                              type = "nested-result",
+                              affects_target = true,
+                              action = {
+                                {
+                                  type = "cluster",
+                                  cluster_count = 25,
+                                  distance = 9,
+                                  distance_deviation = 6,
+                                  action_delivery = {
+                                    type = "instant",
+                                    target_effects = {
+                                      {
+                                        type = "damage",
+                                        damage = {amount = 175, type = "explosion"}
+                                      },
+                                      {
+                                        type = "damage",
+                                        damage = {amount = 350, type = "fire"}
+                                      },
+                                      {
+                                        type = "push-back",
+                                        distance = 1.5
+                                      },
+                                      {
+                                        type = "create-fire",
+                                        entity_name = "fire-flame",
+                                        initial_ground_flame_count = 10
+                                      },
+                                      {
+                                        type = "create-entity",
+                                        entity_name = "medium-explosion"
+                                      },
+                                      {
+                                        type = "nested-result",
+                                        affects_target = true,
+                                        action = {
+                                          type = "cluster",
+                                          cluster_count = 6,
+                                          distance = 3,
+                                          distance_deviation = 2,
+                                          action_delivery = {
+                                            type = "instant",
+                                            target_effects = {
+                                              {
+                                                type = "damage",
+                                                damage = {amount = 125, type = "explosion"}
+                                              },
+                                              {
+                                                type = "damage",
+                                                damage = {amount = 250, type = "fire"}
+                                              },
+                                              {
+                                                type = "create-fire",
+                                                entity_name = "fire-flame",
+                                                initial_ground_flame_count = 6
+                                              },
+                                              {
+                                                type = "create-sticker",
+                                                sticker = "small-fire-sticker-rampant-arsenal"
+                                              },
+                                              {
+                                                type = "create-entity",
+                                                entity_name = "explosion"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  type = "area",
+                                  radius = 24,
+                                  action_delivery = {
+                                    type = "instant",
+                                    target_effects = {
+                                      {
+                                        type = "push-back",
+                                        distance = 2.5
+                                      },
+                                      {
+                                        type = "damage",
+                                        damage = {amount = 650, type = "explosion"}
+                                      },
+                                      {
+                                        type = "damage",
+                                        damage = {amount = 1300, type = "fire"}
+                                      },
+                                      {
+                                        type = "create-fire",
+                                        entity_name = "fire-flame",
+                                        initial_ground_flame_count = 20
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              type = "invoke-tile-trigger",
+                              repeat_count = 1
+                            },
+                            {
+                              type = "destroy-decoratives",
+                              from_render_layer = "decorative",
+                              to_render_layer = "object",
+                              include_soft_decoratives = true,
+                              include_decals = false,
+                              invoke_decorative_trigger = true,
+                              decoratives_with_trigger_only = false,
+                              radius = 6
+                            },
+                            {
+                              type = "create-entity",
+                              entity_name = "massive-explosion"
+                            }
+                          }
+                        }
+                      }
+                    })
+                  }
+                }
+              }
+            }
+          }
+        })
+
+        local xClusterMissileAmmo = "x-cluster-missile"
+
+        makeRecipe({
+                name = xClusterMissileAmmo,
+                enabled = false,
+                category = "crafting",
+                time = 100,
+                ingredients = {
+                    {type = "item", name = "explosive-rocket", amount = 10},
+                    {type = "item", name = "steel-plate", amount = 25},
+                    {type = "item", name = "explosives", amount = 75},
+                    {type = "item", name = "processing-unit", amount = 10}
+                },
+                result = xClusterMissileAmmo,
+        })
+
+        addEffectToTech("super-cluster-rockets",
+                        {
+                            type = "unlock-recipe",
+                            recipe = xClusterMissileAmmo,
+        })
     end
 
 end
