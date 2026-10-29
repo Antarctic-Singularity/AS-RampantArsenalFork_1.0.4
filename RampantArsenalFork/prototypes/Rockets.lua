@@ -1024,7 +1024,9 @@ function rockets.enable()
         data:extend({
           {
             type = "ammo-category",
-            name = "heavy-rockets"
+            name = "heavy-rockets",
+            icon = "__RampantArsenalFork__/graphics/icons/super-cluster-rocket.png",
+            icon_size = 32
           },
           {
             type = "ammo",

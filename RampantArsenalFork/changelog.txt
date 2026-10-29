@@ -4,6 +4,7 @@ Date: 2026.10.28
   Changes:
     - X Cluster Missile can no longer be fired from the Rocket Launcher or Rocket Launcher MkII. It can still be fired from rocket turrets.
     - X Cluster Missile ammo category renamed to "heavy-rockets" (shown as "Heavy Rockets").
+    - Heavy Rockets category now uses the X Cluster Missile icon.
     - Cluster, Incendiary Cluster, Super Cluster and X Cluster missiles and their recipes are now in the Ammo section of the crafting menu.
     - Added locale descriptions for the cluster missiles.
     - Turret map view colors (set as map, friendly and enemy colors):
