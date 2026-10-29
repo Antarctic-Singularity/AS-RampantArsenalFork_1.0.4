@@ -10,6 +10,13 @@ local turretMapColors = {
     artillery = {r = 1, g = 1, b = 1},
 }
 
+-- map_color is only used when friendly/enemy colors are unset, so set all three
+local function setTurretMapColor(turret, color)
+    turret.map_color = color
+    turret.friendly_map_color = color
+    turret.enemy_map_color = color
+end
+
 local turretTypeCategories = {
     ["ammo-turret"] = "physical",
     ["electric-turret"] = "laser",
@@ -26,7 +33,7 @@ local vanillaTurrets = {
 for turretType, category in pairs(turretTypeCategories) do
     for name, turret in pairs(data.raw[turretType] or {}) do
         if name:find("%-rampant%-arsenal$") or name:find("^w93%-") then
-            turret.map_color = turretMapColors[category]
+            setTurretMapColor(turret, turretMapColors[category])
         end
     end
 end
@@ -34,6 +41,6 @@ end
 for name, vanilla in pairs(vanillaTurrets) do
     local turret = data.raw[vanilla.type] and data.raw[vanilla.type][name]
     if turret then
-        turret.map_color = turretMapColors[vanilla.category]
+        setTurretMapColor(turret, turretMapColors[vanilla.category])
     end
 end
