@@ -124,7 +124,7 @@ function rockets.enable()
     local rocketTurret, rocketTurretItem = makeAmmoTurret(entity,
                                                           {
                                                               type = "projectile",
-                                                              ammo_category = "rocket",
+                                                              ammo_category = "rocket", ammo_categories = {"rocket", "x-cluster-rocket"},
                                                               cooldown = 300,
                                                               projectile_creation_distance = 1.39375,
                                                               projectile_center = {0, -0.0875},
@@ -188,7 +188,7 @@ function rockets.enable()
     }
     local rapidRocketTurret, rapidRocketTurretItem = makeAmmoTurret(entity1, {
                                                                         type = "projectile",
-                                                                        ammo_category = "rocket",
+                                                                        ammo_category = "rocket", ammo_categories = {"rocket", "x-cluster-rocket"},
                                                                         cooldown = 50,
                                                                         projectile_creation_distance = 1.39375,
                                                                         projectile_center = {0, -0.0875},
@@ -625,6 +625,7 @@ function rockets.enable()
             icon = "__RampantArsenalFork__/graphics/icons/cluster-missile.png",
             icon_size = 32,
             order = "d[rocket-launcher]-c[cluster]",
+            subgroup = "ammo",
             stack_size = 200,
             ammo_category = "rocket",
             ammo_type = {
@@ -723,6 +724,7 @@ function rockets.enable()
 
         makeRecipe({
                 name = clusterMissileAmmo,
+                subgroup = "ammo",
                 enabled = false,
                 category = "crafting",
                 ingredients = {
@@ -747,6 +749,7 @@ function rockets.enable()
             icon = "__RampantArsenalFork__/graphics/icons/incendiary-cluster-missile.png",
             icon_size = 32,
             order = "d[rocket-launcher]-c[cluster-incendiary]",
+            subgroup = "ammo",
             stack_size = 200,
             ammo_category = "rocket",
             ammo_type = {
@@ -861,6 +864,7 @@ function rockets.enable()
 
         makeRecipe({
                 name = incendiaryClusterMissileAmmo,
+                subgroup = "ammo",
                 enabled = false,
                 category = "crafting-with-fluid",
                 time = 15,
@@ -887,6 +891,7 @@ function rockets.enable()
             icon = "__RampantArsenalFork__/graphics/icons/super-cluster-rocket.png",
             icon_size = 32,
             order = "d[rocket-launcher]-c[super-cluster]",
+            subgroup = "ammo",
             stack_size = 100,
             ammo_category = "rocket",
             ammo_type = {
@@ -995,6 +1000,7 @@ function rockets.enable()
 
         makeRecipe({
                 name = superClusterRocketAmmo,
+                subgroup = "ammo",
                 enabled = false,
                 category = "crafting",
                 time = 20,
@@ -1014,17 +1020,23 @@ function rockets.enable()
         })
 
         -- X Cluster missile (cloned from super-cluster-rocket, reusing the same sprites/tech)
+        -- Own ammo category so hand-held rocket launchers cannot fire it
         data:extend({
+          {
+            type = "ammo-category",
+            name = "x-cluster-rocket"
+          },
           {
             type = "ammo",
             name = "x-cluster-missile",
             icon = "__RampantArsenalFork__/graphics/icons/super-cluster-rocket.png",
             icon_size = 32,
             order = "d[rocket-launcher]-c[x-cluster]",
+            subgroup = "ammo",
             stack_size = 100,
-            ammo_category = "rocket",
+            ammo_category = "x-cluster-rocket",
             ammo_type = {
-              category = "rocket",
+              category = "x-cluster-rocket",
               cooldown_modifier = 1.5,
               action = {
                 {
@@ -1184,6 +1196,7 @@ function rockets.enable()
 
         makeRecipe({
                 name = xClusterMissileAmmo,
+                subgroup = "ammo",
                 enabled = false,
                 category = "crafting",
                 time = 100,

@@ -2,6 +2,9 @@
 Version: 1.0.5
 Date: 2026.10.28
   Changes:
+    - X Cluster Missile can no longer be fired from the Rocket Launcher or Rocket Launcher MkII. It can still be fired from rocket turrets.
+    - Cluster, Incendiary Cluster, Super Cluster and X Cluster missiles and their recipes are now in the Ammo section of the crafting menu.
+    - Added locale descriptions for the cluster missiles and the X Cluster ammo category name.
     - Turret map view colors:
       - Physical turrets (Rampant Arsenal, modular/scattergun, vanilla gun turret): #de2d29
       - Laser and electric turrets (Rampant Arsenal, modular, vanilla laser turret): #ec2394
