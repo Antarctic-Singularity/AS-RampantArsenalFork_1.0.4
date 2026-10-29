@@ -6,5 +6,5 @@
     "author" : "Dimm2101",
     "homepage" : "",
     "description" : "Fork of abandoned mod Rampant Arsenal. Ported to Factorio 2.0\nAdds a variety of weapons to wage war. Adds Additional Turrets, Ammo Types, Landmines, Equipment, Capsules, Walls, Vehicles.\nOptionally adds light versions of artillery shells compatible with snip-light-artillery mod.\nOrigninal mod is Rampant Arsenal https://mods.factorio.com/mod/RampantArsenal/",
-    "dependencies" : ["base >= 2.0.0", "?space-age", "?mech-armor", "?snip-light-artillery"]
+    "dependencies" : ["base >= 2.0.0", "?space-age", "?mech-armor", "?snip-light-artillery", "?lex-aircraft", "?HeroTurretRedux", "?scattergun_turret"]
 }
